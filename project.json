@@ -9,10 +9,22 @@
     "renderMode" : 0,
     "engineDir":"frameworks/cocos2d-html5",
 
-    "modules" : ["cocos2d"],
+    "modules" : ["cocos2d", "cocostudio"],
 
     "jsList" : [
         "src/resource.js",
-        "src/app.js"
+		
+        "src/el/bubblepoppinggameformybaby/game-config.js",
+        
+		"src/el/engine/class.js",
+		"src/el/engine/game.js",
+		"src/el/engine/game-levels-manager.js",
+		"src/el/engine/level-content.js",
+		"src/el/engine/level-scene.js",
+		"src/el/engine/localizator.js",
+		"src/el/engine/persistence.js",
+		"src/el/engine/utilities.js",        
+		
+		"src/el/bubblepoppinggameformybaby/scenes.js"
     ]
 }

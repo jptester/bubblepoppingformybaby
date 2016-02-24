@@ -1,10 +1,10 @@
 {
   "version": "1.0",
-  "name": "BubblePopForMyBaby",
-  "description": "BubblePopForMyBaby",
+  "name": "bubblepoppingformybaby",
+  "description": "Bubble Popping for my baby game",
   "launch_path": "/index.html",
   "icons": {
-    "128": "/res/icon.png"
+    "128": "/res/el_icon.png"
   },
   "developer": {
     "name": "Cocos2d-html5",
