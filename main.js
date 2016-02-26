@@ -69,7 +69,17 @@ cc.game.onStart = function(){
     cc.view.resizeWithBrowserSize(true);
     //load resources
     cc.LoaderScene.preload(g_resources, function () {
-        cc.director.runScene(new el.SplashScreen());
+		
+		// Play intro music
+		cc.audioEngine.playMusic(res.snd_music, true);
+		
+		// if debug skip to x scene
+		if ( cc.game.config.debugMode == 1 ){
+			cc.director.runScene(new el.MainLevel());
+		}
+		else {
+			cc.director.runScene(new el.SplashScreen());
+		}
     }, this);
 };
 cc.game.run();
