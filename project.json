@@ -15,6 +15,7 @@
         "src/resource.js",
 		
         "src/el/bubblepoppinggameformybaby/game-config.js",
+		"src/el/bubblepoppinggameformybaby/credits.js",
         
 		"src/el/engine/class.js",
 		"src/el/engine/game.js",

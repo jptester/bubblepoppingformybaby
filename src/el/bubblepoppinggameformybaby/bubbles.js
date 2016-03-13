@@ -18,7 +18,7 @@ var el = el || {};
 // Global variable
 //
 el.bubble.BubblesDestroyed = 0;
-el.bubble.BubblesSFXStep = 20;
+el.bubble.BubblesSFXStep = 25;
 
 //
 //  Bubble generator class
@@ -217,11 +217,12 @@ el.bubble.Bubble = el.Class.extend({
 		this.m_node.addChild(brightSprite);
 		
 		// add effects to bubble sprite
-		var rotation = new cc.rotateBy(3 + Math.round(Math.random() * 5), 360);
-		rotation.repeatForever();
+		//var rotation = new cc.RotateBy(3 + Math.round(Math.random() * 5), 360);
+		//var rotation = new cc.RotateTo(5, 90, 90);
+		//rotation.repeatForever();
 		
 		// Set effect
-		bubbleSprite.runAction(rotation);
+		//bubbleSprite.runAction(rotation);
 		
 		// Set initial position
 		this.m_node.setPosition(initPoint);
@@ -318,7 +319,7 @@ el.bubble.Bubble = el.Class.extend({
 				colorName = "0,255,0,255";
 				break;
 			case "blue":
-				colorName = "0,0,255,255";
+				colorName = "32,32,255,255";
 				break;
 			case "yellow":
 				colorName = "255,255,0,255";

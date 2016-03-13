@@ -1,11 +1,11 @@
 var res = {
 	
 	// Scenes
-    sc_splashscreen : "res/sc_splashscreen.json",
+    	sc_splashscreen : "res/sc_splashscreen.json",
 	sc_gamePlay : "res/sc_gameplay.json",
 	
 	// Sound
-	snd_music : "res/sound/bg_music.ogg",
+	snd_music : "res/sound/bg_music.mp3",
 	snd_creation_sfx : "res/sound/bubble_creation.mp3",
 	snd_explodes_sfx : "res/sound/bubble_explodes.mp3",
 	snd_baby_laughs_sfx : "res/sound/baby_laugh.mp3",
