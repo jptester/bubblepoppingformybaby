@@ -313,13 +313,13 @@ el.bubble.Bubble = el.Class.extend({
 		// get name and encode it
 		switch(color[0].trim()){ // r, g, b, a
 			case "red":
-				colorName = "255,0,0,255";
+				colorName = "255,64,64,255";
 				break;
 			case "green":
 				colorName = "0,255,0,255";
 				break;
 			case "blue":
-				colorName = "32,32,255,255";
+				colorName = "16,16,255,255";
 				break;
 			case "yellow":
 				colorName = "255,255,0,255";
