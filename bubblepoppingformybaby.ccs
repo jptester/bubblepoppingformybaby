@@ -4,16 +4,13 @@
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
         <Folder Name="visualcontent">
+          <Folder Name="bg">
+            <Image Name="bg01.jpg" />
+          </Folder>
           <Folder Name="brands">
             <Image Name="cocos_splashscreen.png" />
             <Image Name="el_logo.png" />
             <Image Name="el_splashscreen.png" />
-          </Folder>
-          <Folder Name="bg">
-            <Image Name="bg01.jpg" />
-          </Folder>
-          <Folder Name="ui">
-            <Image Name="whitedot.png" />
           </Folder>
           <Folder Name="levels">
             <Image Name="blue_bubble.png" />
@@ -21,9 +18,12 @@
             <Image Name="red_bubble.png" />
             <Image Name="yellow_bubble.png" />
           </Folder>
+          <Folder Name="ui">
+            <Image Name="whitedot.png" />
+          </Folder>
         </Folder>
-        <Project Name="sc_splashscreen.csd" Type="Scene" />
         <Project Name="sc_gameplay.csd" Type="Scene" />
+        <Project Name="sc_splashscreen.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>
