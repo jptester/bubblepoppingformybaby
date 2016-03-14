@@ -127,7 +127,7 @@ el.MainLevel = cc.Scene.extend({
 				cc.p(0,200), // position
 				cc.p(250,350), // direction
 				1, // frequencyPerSecond
-				10,  // updateFrequency
+				12,  // updateFrequency
 				5,  // maxBubbles
 				4,  // maxGravity 
 				[res.img_blue_bubble, res.img_green_bubble, res.img_red_bubble, res.img_yellow_bubble], // bubblesArray
@@ -143,7 +143,7 @@ el.MainLevel = cc.Scene.extend({
 				cc.p(800,200), // position
 				cc.p(550,350), // direction x=250 y=100 diff
 				1.5, // frequencyPerSecond
-				10,  // updateFrequency
+				12,  // updateFrequency
 				6,  // maxBubbles
 				3,  // maxGravity 
 				[res.img_blue_bubble, res.img_green_bubble, res.img_red_bubble, res.img_yellow_bubble], // bubblesArray

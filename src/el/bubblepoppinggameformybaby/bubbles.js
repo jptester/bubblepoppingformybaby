@@ -18,7 +18,8 @@ var el = el || {};
 // Global variable
 //
 el.bubble.BubblesDestroyed = 0;
-el.bubble.BubblesSFXStep = 25;
+el.bubble.BubblesSFXStep = 15;
+el.bubble.BubblesPoppedMultipleHit = 2;
 
 //
 //  Bubble generator class
@@ -121,6 +122,9 @@ el.bubble.BubbleGenerator = el.Class.extend({
 				bubble.updateBubble();		
 			}
 			
+			// Amount of bubbles popped
+			var iBubblesPopped = 0;
+			
 			// look for any must kill bubble
 			for ( var i = 0; i < this._bubbles.length; i++ ) {
 				// check if bubble must die
@@ -134,10 +138,20 @@ el.bubble.BubbleGenerator = el.Class.extend({
 						bubble.getSprite().getParent().removeChild(bubble.getSprite());
 					}
 					
+					// Sum bubbles popped
+					if ( bubble.m_hasBeenPopped ) {
+						iBubblesPopped++;
+					}
+					
 					// remove current bubble from main array
 					this._bubbles.splice(i--,1);
 				}
-
+			}
+			
+			// If more than 'n' bubbles are popped - do something special
+			// Thanx John!
+			if ( iBubblesPopped >= el.bubble.BubblesPoppedMultipleHit ) {
+				el.Audio.getInstance().playEffect(res.snd_baby_sound_sfx);
 			}
 		}
 	},
@@ -173,7 +187,9 @@ el.bubble.BubbleGenerator = el.Class.extend({
 	// Special effects for bubble creation
 	creationEffects: function() {
 		// sound fx
-		cc.audioEngine.playEffect(res.snd_creation_sfx); // snd_explodes_sfx
+		// cc.audioEngine.playEffect(res.snd_creation_sfx); // snd_explodes_sfx
+		el.Audio.getInstance().playEffect(res.snd_creation_sfx);
+
 	},
 	
 });
@@ -193,6 +209,8 @@ el.bubble.Bubble = el.Class.extend({
 	m_gravity: null,
 	m_height: null,
 	m_killBubble: null,
+	m_hasBeenPopped : null,
+
 	
 	// Constructor for level
 	ctor: function (image, xAcceleration, yAcceleration, gravity, initPoint) {
@@ -244,12 +262,15 @@ el.bubble.Bubble = el.Class.extend({
 		// Set color as "name"
 		this.m_node.setName(this.codeColorName(image));
 		
+		// This bubble has not been popped (yet)
+		this.m_hasBeenPopped = false;
+		
 		// Add touch event listener
 		var touchEvent = cc.EventListener.create({
 			event: cc.EventListener.TOUCH_ONE_BY_ONE,
 			swallowTouches: true,
 			onTouchBegan: function(touch, event) {
-		
+				
 				// get target
 				if ( !event.getCurrentTarget() ) {
 					return false;
@@ -278,7 +299,10 @@ el.bubble.Bubble = el.Class.extend({
 					target.m_parentBubble.poppingBubbleEffects(target);
 					
 					// Kill bubble
-					target.m_parentBubble.killBubble();					
+					target.m_parentBubble.killBubble();
+					
+					// This bubble has been popped
+					target.m_parentBubble.m_hasBeenPopped = true;
 
 				}
 				return false;			
@@ -385,11 +409,14 @@ el.bubble.Bubble = el.Class.extend({
 	poppingBubbleEffects: function( sprite ) {
 		
 		// sound fx
-		cc.audioEngine.playEffect(res.snd_explodes_sfx); // snd_explodes_sfx
+		el.Audio.getInstance().playEffect(res.snd_explodes_sfx);
+		//cc.audioEngine.playEffect(res.snd_explodes_sfx); // snd_explodes_sfx
 		
 		// special effect
 		if ( el.bubble.BubblesDestroyed % el.bubble.BubblesSFXStep == 0 ) {
-			cc.audioEngine.playEffect(res.snd_baby_laughs_sfx); // snd_explodes_sfx			
+			
+			el.Audio.getInstance().playEffect(res.snd_baby_laughs_sfx);
+			// cc.audioEngine.playEffect(res.snd_baby_laughs_sfx); // snd_explodes_sfx			
 		}
 		
 		// get color of the bubble (or object)

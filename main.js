@@ -70,8 +70,15 @@ cc.game.onStart = function(){
     //load resources
     cc.LoaderScene.preload(g_resources, function () {
 		
-		// Play intro music
-		cc.audioEngine.playMusic(res.snd_music, true);
+		// Set music and sound
+		{
+			// Set music and effects volume
+			cc.audioEngine.setEffectsVolume(0.5);
+			cc.audioEngine.setMusicVolume(1);
+			
+			// Play intro music
+			cc.audioEngine.playMusic(res.snd_music, true);
+		}
 		
 		// if debug skip to x scene
 		if ( cc.game.config.debugMode == 1 ){

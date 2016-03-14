@@ -9,6 +9,7 @@ var res = {
 	snd_creation_sfx : "res/sound/bubble_creation.mp3",
 	snd_explodes_sfx : "res/sound/bubble_explodes.mp3",
 	snd_baby_laughs_sfx : "res/sound/baby_laugh.mp3",
+	snd_baby_sound_sfx : "res/sound/baby_sound.mp3",
 	
 	// bubbles & visual elements
 	img_blue_bubble : "res/visualcontent/levels/blue_bubble.png",
