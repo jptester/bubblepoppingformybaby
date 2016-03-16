@@ -1,8 +1,9 @@
 var res = {
 	
 	// Scenes
-    	sc_splashscreen : "res/sc_splashscreen.json",
+	sc_splashscreen : "res/sc_splashscreen.json",
 	sc_gamePlay : "res/sc_gameplay.json",
+	sc_optionsPopup : "res/sc_options.json",
 	
 	// Sound
 	snd_music : "res/sound/bg_music.mp3",
@@ -20,6 +21,8 @@ var res = {
 	
 	// particles
 	emmit_bubble_explotion_particle : "res/visualcontent/particles/popping_bubble_particle.plist",
+	emmit_bubble_fireworks_particle : "res/visualcontent/particles/fireworks_particles.plist",
+	emmit_bubble_starsrain_particle : "res/visualcontent/particles/stars_particles.plist",	
 	
 };
 

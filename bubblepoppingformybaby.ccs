@@ -6,12 +6,14 @@
         <Folder Name="visualcontent">
           <Folder Name="bg">
             <Image Name="bg01.jpg" />
+            <Image Name="popup_bg.png" />
           </Folder>
           <Folder Name="brands">
             <Image Name="cocos_splashscreen.png" />
             <Image Name="el_logo.png" />
             <Image Name="el_splashscreen.png" />
           </Folder>
+          <Folder Name="fonts" />
           <Folder Name="levels">
             <Image Name="blue_bubble.png" />
             <Image Name="green_bubble.png" />
@@ -19,10 +21,30 @@
             <Image Name="yellow_bubble.png" />
           </Folder>
           <Folder Name="ui">
+            <Image Name="bubbles_icon.png" />
+            <Image Name="counter_icon.png" />
+            <Image Name="credits.png" />
+            <Image Name="door_disabled.png" />
+            <Image Name="door_normal.png" />
+            <Image Name="door_pressed.png" />
+            <Image Name="gear-dissabled.png" />
+            <Image Name="gear-normal.png" />
+            <Image Name="gear-pressed.png" />
+            <Image Name="Slider_Back.png" />
+            <Image Name="Slider_PressBar.png" />
+            <Image Name="SliderNode_Disable.png" />
+            <Image Name="SliderNode_Normal.png" />
+            <Image Name="SliderNode_Press.png" />
+            <Image Name="sound_fx.png" />
+            <Image Name="sound_music.png" />
             <Image Name="whitedot.png" />
+            <Image Name="x-disabled.png" />
+            <Image Name="x-normal.png" />
+            <Image Name="x-pressed.png" />
           </Folder>
         </Folder>
         <Project Name="sc_gameplay.csd" Type="Scene" />
+        <Project Name="sc_options.csd" Type="Scene" />
         <Project Name="sc_splashscreen.csd" Type="Scene" />
       </RootFolder>
     </Group>

@@ -56,6 +56,226 @@
             },
             "Name": "bg01_3",
             "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/bubbles_icon.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 53.0,
+              "Y": 441.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0662,
+              "Y": 0.9187
+            },
+            "PreSize": {
+              "X": 0.125,
+              "Y": 0.1583
+            },
+            "LeftMargin": 3.0,
+            "RightMargin": 697.0,
+            "TopMargin": 1.0,
+            "BottomMargin": 403.0,
+            "Tag": 15,
+            "ActionTag": -638434999,
+            "Size": {
+              "X": 100.0,
+              "Y": 76.0
+            },
+            "Name": "bubbles_icon_6",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/counter_icon.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 152.0,
+              "Y": 441.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 0.8158
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.19,
+              "Y": 0.9187
+            },
+            "PreSize": {
+              "X": 0.125,
+              "Y": 0.1583
+            },
+            "LeftMargin": 102.0,
+            "RightMargin": 598.0,
+            "TopMargin": 1.0,
+            "BottomMargin": 403.0,
+            "Tag": 16,
+            "ActionTag": 1881121760,
+            "Size": {
+              "X": 100.0,
+              "Y": 76.0
+            },
+            "Name": "counter_icon_7",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/gear-dissabled.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/gear-pressed.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/gear-normal.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 37,
+            "Scale9Height": 29,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 761.0,
+              "Y": 449.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9513,
+              "Y": 0.9354
+            },
+            "PreSize": {
+              "X": 0.0838,
+              "Y": 0.1063
+            },
+            "LeftMargin": 727.5,
+            "RightMargin": 5.5,
+            "TopMargin": 5.5,
+            "BottomMargin": 423.5,
+            "Tag": 7,
+            "ActionTag": -1513825170,
+            "Size": {
+              "X": 67.0,
+              "Y": 51.0
+            },
+            "Name": "btn_options",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 36,
+            "LabelText": "0000",
+            "HorizontalAlignmentType": "HT_Right",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "ShadowEnabled": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 151.0002,
+              "Y": 442.9997
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "G": 234,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1888,
+              "Y": 0.9229
+            },
+            "PreSize": {
+              "X": 0.1,
+              "Y": 0.0854
+            },
+            "LeftMargin": 111.0002,
+            "RightMargin": 608.9998,
+            "TopMargin": 16.5003,
+            "BottomMargin": 422.4997,
+            "Tag": 7,
+            "ActionTag": 360222315,
+            "Size": {
+              "X": 80.0,
+              "Y": 41.0
+            },
+            "Name": "txt_counter",
+            "ctype": "TextObjectData"
           }
         ],
         "Size": {
@@ -66,7 +286,12 @@
         "ctype": "SingleNodeObjectData"
       },
       "UsedResources": [
-        "visualcontent/bg/bg01.jpg"
+        "visualcontent/bg/bg01.jpg",
+        "visualcontent/ui/bubbles_icon.png",
+        "visualcontent/ui/counter_icon.png",
+        "visualcontent/ui/gear-dissabled.png",
+        "visualcontent/ui/gear-normal.png",
+        "visualcontent/ui/gear-pressed.png"
       ],
       "ctype": "GameFileData"
     }

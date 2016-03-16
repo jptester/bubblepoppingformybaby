@@ -1,0 +1,553 @@
+{
+  "ID": "44ae45d8-5104-4caf-af66-c25327bb429b",
+  "Version": "3.10.0.0",
+  "Name": "sc_options",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 3,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/bg/popup_bg.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 400.0,
+              "Y": 240.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 5,
+            "ActionTag": -285693341,
+            "Size": {
+              "X": 800.0,
+              "Y": 480.0
+            },
+            "Name": "popup_bg_2",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "BackGroundData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/Slider_Back.png",
+              "Plist": ""
+            },
+            "ProgressBarData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/Slider_PressBar.png",
+              "Plist": ""
+            },
+            "BallNormalData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/SliderNode_Normal.png",
+              "Plist": ""
+            },
+            "BallPressedData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/SliderNode_Press.png",
+              "Plist": ""
+            },
+            "BallDisabledData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/SliderNode_Disable.png",
+              "Plist": ""
+            },
+            "PercentInfo": 50,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 295.9999,
+              "Y": 338.0
+            },
+            "Scale": {
+              "ScaleX": 1.21,
+              "ScaleY": 1.5714
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.37,
+              "Y": 0.7042
+            },
+            "PreSize": {
+              "X": 0.25,
+              "Y": 0.0292
+            },
+            "LeftMargin": 195.9999,
+            "RightMargin": 404.0001,
+            "TopMargin": 135.0,
+            "BottomMargin": 331.0,
+            "Tag": 6,
+            "ActionTag": -1642778405,
+            "Size": {
+              "X": 200.0,
+              "Y": 14.0
+            },
+            "Name": "slider_sfx_volume",
+            "ctype": "SliderObjectData"
+          },
+          {
+            "BackGroundData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/Slider_Back.png",
+              "Plist": ""
+            },
+            "ProgressBarData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/Slider_PressBar.png",
+              "Plist": ""
+            },
+            "BallNormalData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/SliderNode_Normal.png",
+              "Plist": ""
+            },
+            "BallPressedData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/SliderNode_Press.png",
+              "Plist": ""
+            },
+            "BallDisabledData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/SliderNode_Disable.png",
+              "Plist": ""
+            },
+            "PercentInfo": 50,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 295.9999,
+              "Y": 270.0
+            },
+            "Scale": {
+              "ScaleX": 1.21,
+              "ScaleY": 1.5714
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.37,
+              "Y": 0.5625
+            },
+            "PreSize": {
+              "X": 0.25,
+              "Y": 0.0292
+            },
+            "LeftMargin": 195.9999,
+            "RightMargin": 404.0001,
+            "TopMargin": 203.0,
+            "BottomMargin": 263.0,
+            "Tag": 8,
+            "ActionTag": -1187833367,
+            "Size": {
+              "X": 200.0,
+              "Y": 14.0
+            },
+            "Name": "slider_music_volume",
+            "ctype": "SliderObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/door_disabled.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/door_pressed.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/door_normal.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 47,
+            "Scale9Height": 55,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 292.0,
+              "Y": 197.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.365,
+              "Y": 0.4104
+            },
+            "PreSize": {
+              "X": 0.0962,
+              "Y": 0.1604
+            },
+            "LeftMargin": 253.5,
+            "RightMargin": 469.5,
+            "TopMargin": 244.5,
+            "BottomMargin": 158.5,
+            "Tag": 10,
+            "ActionTag": -1037659538,
+            "Size": {
+              "X": 77.0,
+              "Y": 77.0
+            },
+            "Name": "btn_quit",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/sound_fx.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 131.0,
+              "Y": 338.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1637,
+              "Y": 0.7042
+            },
+            "PreSize": {
+              "X": 0.0637,
+              "Y": 0.1063
+            },
+            "LeftMargin": 105.5,
+            "RightMargin": 643.5,
+            "TopMargin": 116.5,
+            "BottomMargin": 312.5,
+            "Tag": 11,
+            "ActionTag": 1997162222,
+            "Size": {
+              "X": 51.0,
+              "Y": 51.0
+            },
+            "Name": "sound_fx_3",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/sound_music.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 131.0,
+              "Y": 270.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1637,
+              "Y": 0.5625
+            },
+            "PreSize": {
+              "X": 0.0637,
+              "Y": 0.125
+            },
+            "LeftMargin": 105.5,
+            "RightMargin": 643.5,
+            "TopMargin": 180.0,
+            "BottomMargin": 240.0,
+            "Tag": 12,
+            "ActionTag": -155850049,
+            "Size": {
+              "X": 51.0,
+              "Y": 60.0
+            },
+            "Name": "sound_music_4",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 12,
+            "LabelText": "Bubble Popping for my baby\n\nGame design\nJPTester & John Alan Kennedy\nDevelopment\nJPTester\nArt\nTokirokawa\nMusic\nJohn Alan Kennedy\nSound effects\nhttp://www.freesfx.co.uk\n\nEntretenimiento Lobo",
+            "HorizontalAlignmentType": "HT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 482.0,
+              "Y": 127.008
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "IconVisible": false,
+            "PositionPercentXEnabled": true,
+            "PositionPercentYEnabled": true,
+            "PrePosition": {
+              "X": 0.6025,
+              "Y": 0.2646
+            },
+            "PreSize": {
+              "X": 0.2075,
+              "Y": 0.4375
+            },
+            "LeftMargin": 482.0,
+            "RightMargin": 152.0,
+            "TopMargin": 142.992,
+            "BottomMargin": 127.008,
+            "Tag": 12,
+            "ActionTag": 757020816,
+            "Size": {
+              "X": 166.0,
+              "Y": 210.0
+            },
+            "Name": "txt_credits_title",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/credits.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 561.0,
+              "Y": 366.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7013,
+              "Y": 0.7625
+            },
+            "PreSize": {
+              "X": 0.0625,
+              "Y": 0.1042
+            },
+            "LeftMargin": 536.0,
+            "RightMargin": 214.0,
+            "TopMargin": 89.0,
+            "BottomMargin": 341.0,
+            "Tag": 14,
+            "ActionTag": -1186057204,
+            "Size": {
+              "X": 50.0,
+              "Y": 50.0
+            },
+            "Name": "credits_5",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/x-disabled.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/x-pressed.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/ui/x-normal.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 21,
+            "Scale9Height": 29,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 682.0,
+              "Y": 412.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8525,
+              "Y": 0.8583
+            },
+            "PreSize": {
+              "X": 0.0637,
+              "Y": 0.1063
+            },
+            "LeftMargin": 656.5,
+            "RightMargin": 92.5,
+            "TopMargin": 42.5,
+            "BottomMargin": 386.5,
+            "Tag": 15,
+            "ActionTag": 1618236866,
+            "Size": {
+              "X": 51.0,
+              "Y": 51.0
+            },
+            "Name": "btn_x",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 800.0,
+          "Y": 480.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "visualcontent/bg/popup_bg.png",
+        "visualcontent/ui/credits.png",
+        "visualcontent/ui/door_disabled.png",
+        "visualcontent/ui/door_normal.png",
+        "visualcontent/ui/door_pressed.png",
+        "visualcontent/ui/Slider_Back.png",
+        "visualcontent/ui/Slider_PressBar.png",
+        "visualcontent/ui/SliderNode_Disable.png",
+        "visualcontent/ui/SliderNode_Normal.png",
+        "visualcontent/ui/SliderNode_Press.png",
+        "visualcontent/ui/sound_fx.png",
+        "visualcontent/ui/sound_music.png",
+        "visualcontent/ui/x-disabled.png",
+        "visualcontent/ui/x-normal.png",
+        "visualcontent/ui/x-pressed.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Scene"
+}

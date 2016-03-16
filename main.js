@@ -73,8 +73,8 @@ cc.game.onStart = function(){
 		// Set music and sound
 		{
 			// Set music and effects volume
-			cc.audioEngine.setEffectsVolume(0.5);
-			cc.audioEngine.setMusicVolume(1);
+			cc.audioEngine.setEffectsVolume(el.bubble.fSoundFXVolume);
+			cc.audioEngine.setMusicVolume(el.bubble.fMusicVolume);
 			
 			// Play intro music
 			cc.audioEngine.playMusic(res.snd_music, true);

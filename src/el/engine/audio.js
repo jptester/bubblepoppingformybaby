@@ -47,7 +47,7 @@ el.Audio = (function () {
 		loop = loop || false;
 
 		// if linux
-		if ( cc.sys.isNative && cc.sys.LINUX ) {
+		if ( cc.sys.isNative && sys.OS_LINUX == cc.sys.os ) {
 			
 			// get id
 			if ( _queue.length >= el.MAX_SOUND_EFFECTS ) {
@@ -59,14 +59,15 @@ el.Audio = (function () {
 			}
 			
 			// Add sound ID to queue and play it
-			_queue.push(cc.audioEngine.playEffect(url, loop));
+			var id = cc.audioEngine.playEffect(url, loop);
+			_queue.push(id);
 			
 			// Leave
-			return;
+			return id;
 		}
 		
 		// if not linux just play the sound
-		cc.audioEngine.playEffect(url, loop);
+		return cc.audioEngine.playEffect(url, loop);
 	}
 	
 	// Public methods

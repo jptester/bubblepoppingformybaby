@@ -99,20 +99,82 @@ el.MainLevel = cc.Scene.extend({
 	// private properties
 	_layer: null,
 	
+	// ui elements
+	m_counter: null,
+	m_optButton: null,
+	
     onEnter:function () {
         this._super();
-        this._layer = new el.InitLayer(res.sc_gamePlay, true, false );
-        this.addChild(this._layer);
 		
-		// Schedule update
-		this.scheduleUpdate();
-		
-		// set up bubbleGenerator
-		this.m_bubblesGenerators = [];
+		// if no layer
+		if ( !this._layer ) {
+			this._layer = new el.InitLayer(res.sc_gamePlay, true, false );
+			this.addChild(this._layer);
+			
+			// Schedule update
+			this.scheduleUpdate();
+			
+			// set up bubbleGenerator
+			this.m_bubblesGenerators = [];
+			
+			// Load UI elements and provide them with functionality
+			this.setupUI();
 
-		// start game
-		this.startGame();
+			// start game
+			this.startGame();
+		}
+		
+		// enable options button
+		if ( this.m_optButton ) {
+			this.m_optButton.setEnabled(true);
+		}
+		
+
     },
+	
+	//
+	// Setup UI
+	//
+	setupUI:function() {
+		
+		// Get the options button
+		this.m_optButton = el.gFindFirstChildInInnerTreeByName(this, "btn_options");
+		if ( this.m_optButton && this.m_optButton instanceof ccui.Button ) {
+			this.m_optButton.addTouchEventListener(this.optionsPopup, this);
+		}
+		
+		// Get the counter
+		this.m_counter = el.gFindFirstChildInInnerTreeByName(this, "txt_counter");
+		if ( this.m_counter ) {
+			this.m_counter.getCounterValue = function() {
+				return parseInt( this.getString(), 10 );
+			}
+			this.m_counter.setCounterValue = function(value) {
+				this.setString(("000" + value).slice(-4));
+			}
+		}
+	},
+	
+	//
+	// Create options pop-up
+	//
+	optionsPopup:function(targetButton, event) {
+		
+		// if released touch/click
+		if ( cc.EventListener.TOUCH_ALL_AT_ONCE == event ) {
+			// only do it once
+			if ( this.m_optButton.isEnabled() ) {
+				// Pop up new scene
+				cc.director.pushScene(new cc.TransitionFade(0.25, new el.optionsPopUpScene()));
+			}
+
+			// disable button
+			if ( this.m_optButton ) {
+				this.m_optButton.setEnabled(false);
+			}
+		}
+	},
+	
 	
 	//
 	// Config buttons
@@ -163,9 +225,141 @@ el.MainLevel = cc.Scene.extend({
 		// call super function
 		this._super(dt);
 		
+		// bubbles popped at same time
+		var iBubblesPopped = 0;
+		
 		// update generators
 		for ( generator of this.m_bubblesGenerators ) {
 			generator.updateGenerator();
+			iBubblesPopped += generator.getBubblesPopped();
+		}
+		
+		// If more than 'n' bubbles are popped - do something special
+		// Thanx John!
+		if ( iBubblesPopped >= el.bubble.BubblesPoppedMultipleHit ) {
+			el.Audio.getInstance().playEffect(res.snd_baby_sound_sfx);
+		}
+	}
+});
+
+//
+// Options scene
+// Creator : JP
+// Date: 15/03/2016
+//
+el.optionsPopUpScene = cc.Scene.extend({
+	
+	//
+	// On enter function
+	//
+	onEnter:function () {
+      
+		this._super();
+
+		// Create initial layer
+		this.addChild(new el.InitLayer(res.sc_optionsPopup, true, false ));
+		
+		// Load UI elements and provide them with functionality
+		this.setupUI();
+
+    },
+	
+	//
+	// Setup UI
+	//
+	setupUI:function() {
+		
+		// Get the 'leave' or x button
+		var returnButton = el.gFindFirstChildInInnerTreeByName(this, "btn_x");
+		if ( returnButton && returnButton instanceof ccui.Button ) {
+			returnButton.addTouchEventListener(this.optionsPopup, this);
+		}
+
+		// Set up "exit" button
+		var btn_Quit = el.gFindFirstChildInInnerTreeByName(this, "btn_quit");
+		if ( btn_Quit && btn_Quit instanceof ccui.Button ) {
+
+			// If app is native
+			if ( cc.sys.isNative )
+			{
+				// Add touch event listener
+				btn_Quit.addTouchEventListener(this.quitGame, this);
+			}
+			else {
+				btn_Quit.setEnabled(false);
+				btn_Quit.setBright(false);
+			}
+		}
+		
+		// Set up sound effects volume slider
+		var slider_sfx_volume = el.gFindFirstChildInInnerTreeByName(this, "slider_sfx_volume");
+		if ( slider_sfx_volume && slider_sfx_volume instanceof ccui.Slider ) {			
+			// Set current level
+			var volume = cc.audioEngine.getEffectsVolume();
+			slider_sfx_volume.setPercent(volume * 100);
+			slider_sfx_volume.addTouchEventListener( this.sfxVolumeChange, this );
+		}
+		
+		// Set up music volume slider
+		var slider_music_volume = el.gFindFirstChildInInnerTreeByName(this, "slider_music_volume");
+		if ( slider_music_volume && slider_music_volume instanceof ccui.Slider ) {			
+			// Set current level
+			var volume = cc.audioEngine.getMusicVolume();
+			slider_music_volume.setPercent(volume * 100);
+			slider_music_volume.addTouchEventListener( this.musicVolumeChange, this );
+		}
+	},
+	
+	//
+	// sfxVolumeChange volume change
+	//
+	sfxVolumeChange: function( sender, type ) {
+        if ( cc.EventListener.TOUCH_ALL_AT_ONCE == type ) {
+			// get new percent value
+			var percent = sender.getPercent();
+			cc.audioEngine.setEffectsVolume(percent / 100);
+			el.Audio.getInstance().playEffect(res.snd_creation_sfx);
+        }
+	},
+	
+	//
+	// Music VolumeChange event handler
+	//
+	musicVolumeChange: function( sender, type ) {
+        if ( cc.EventListener.TOUCH_ALL_AT_ONCE == type ) {
+			// get new percent value
+			var percent = sender.getPercent();
+			cc.audioEngine.setMusicVolume(percent / 100);
+        }
+	},
+	
+	//
+	// Pop pop-up menu
+	//
+	optionsPopup:function(sender, type) {
+
+		// If button touched
+		if ( cc.EventListener.TOUCH_ALL_AT_ONCE == type ) {
+			// return to previous scene  
+			cc.director.popScene();
+		}
+	},
+	
+	//
+	// Quit game
+	//
+	quitGame: function(sender, type){
+		
+		// If button touched
+		if ( cc.EventListener.TOUCH_ALL_AT_ONCE == type ) {
+			// If native app
+			if (cc.sys.isNative)
+			{
+				cc.director.end();
+			}
+			else {
+				window.history && window.history.go(-1);
+			}
 		}
 	}
 });

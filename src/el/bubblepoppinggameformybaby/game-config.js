@@ -25,6 +25,10 @@ el.bubble.str_DefaultLanguage = "es";
 el.bubble.str_LocalizationPathFileName = "res/langs/";
 el.bubble.str_LocalizationFileTailName = "_localization.plist";
 
+// Sounds settings
+el.bubble.fSoundFXVolume = 0.5;
+el.bubble.fMusicVolume = 1;
+
 // Types of content in this game
 el.bubble.LEVEL_TYPES = el.bubble.LEVEL_TYPES || {
 	COMIC: 0,

@@ -18,8 +18,10 @@ var el = el || {};
 // Global variable
 //
 el.bubble.BubblesDestroyed = 0;
-el.bubble.BubblesSFXStep = 15;
+el.bubble.BubblesSFXStep = 10;
 el.bubble.BubblesPoppedMultipleHit = 2;
+el.bubble.FirstBubblesBonusReached = 13;
+el.bubble.SecondBubblesBonusReached = 21;
 
 //
 //  Bubble generator class
@@ -39,6 +41,8 @@ el.bubble.BubbleGenerator = el.Class.extend({
 	m_lastTimeCreation: null,
 	m_lastTimeUpdate: null,
 	m_parentNode: null,
+	m_counter: null,
+	m_bubblesPopped: null,
 	
 	// private properties
 	_bubbles: null,
@@ -59,9 +63,17 @@ el.bubble.BubbleGenerator = el.Class.extend({
 		this.m_bubblesArray = bubblesArray;
 		this.m_lastTimeCreation = 0.0;
 		this.m_lastTimeUpdate = 0.0;
+		this.m_bubblesPopped = 0;
 		
 		// Parent node
 		this.m_parentNode = parentNode;
+		var scene = this.m_parentNode ? this.m_parentNode.getParent() : null;
+		if ( scene && scene instanceof cc.Scene ) {
+			this.m_counter = scene.m_counter;
+			if ( !this.m_counter ) {
+				el.gELLog("No counter UI element found in scene");
+			}
+		}
 
 		// Private properties
 		this._bubbles = [];
@@ -110,6 +122,9 @@ el.bubble.BubbleGenerator = el.Class.extend({
 		// calculate time
 		this.m_lastTimeUpdate += deltaTime;
 		
+		// reset number of bubbles popped
+		this.m_bubblesPopped = 0;
+	
 		// if update is needed (enough time has passed)
 		if ( this.m_lastTimeUpdate >= this.m_updateFrequency ) {
 			
@@ -124,6 +139,9 @@ el.bubble.BubbleGenerator = el.Class.extend({
 			
 			// Amount of bubbles popped
 			var iBubblesPopped = 0;
+
+			// Get bubbles counter
+			var counter = this.m_counter.getCounterValue();
 			
 			// look for any must kill bubble
 			for ( var i = 0; i < this._bubbles.length; i++ ) {
@@ -141,19 +159,60 @@ el.bubble.BubbleGenerator = el.Class.extend({
 					// Sum bubbles popped
 					if ( bubble.m_hasBeenPopped ) {
 						iBubblesPopped++;
+						
+						// Special bonus for reaching certain limits
+						if ( this.m_parentNode ) {
+							if ( (counter + iBubblesPopped) % el.bubble.FirstBubblesBonusReached == 0 ) {							
+								// Play fireworks particles
+								var particleEmmiter1 = new cc.ParticleSystem(res.emmit_bubble_starsrain_particle);
+								particleEmmiter1.setPosition(cc.p(400,240));
+								particleEmmiter1.setAutoRemoveOnFinish(true);
+								this.m_parentNode.addChild(particleEmmiter1);
+							}
+							
+							// if second limit has been reached
+							if ( (counter + iBubblesPopped) % el.bubble.SecondBubblesBonusReached == 0 ) {							
+								// Play fireworks particles
+								var particleEmmiter2 = new cc.ParticleSystem(res.emmit_bubble_fireworks_particle);
+								particleEmmiter2.setPosition(cc.p(400,240));
+								particleEmmiter2.setAutoRemoveOnFinish(true);
+								this.m_parentNode.addChild(particleEmmiter2);
+							}
+						}
 					}
 					
 					// remove current bubble from main array
 					this._bubbles.splice(i--,1);
 				}
 			}
-			
-			// If more than 'n' bubbles are popped - do something special
-			// Thanx John!
-			if ( iBubblesPopped >= el.bubble.BubblesPoppedMultipleHit ) {
-				el.Audio.getInstance().playEffect(res.snd_baby_sound_sfx);
+
+			// Bubbles counter
+			{
+				// Add bubbles popped counter
+				var counter = this.m_counter.getCounterValue();
+				
+				// limit counter control
+				if ( counter >= 9999 ) {
+					counter = 0;
+				}
+				
+				// Add bubbles popped to counter
+				counter += iBubblesPopped;
+				
+				// update counter
+				this.m_counter.setCounterValue(counter);
 			}
+
+			// keep track of amount of bubbles popped
+			this.m_bubblesPopped = iBubblesPopped;
 		}
+	},
+	
+	//
+	// Returns last bubbles popped
+	//
+	getBubblesPopped: function() {
+		return this.m_bubblesPopped;
 	},
 		
 	// Create a new bubble
@@ -187,11 +246,9 @@ el.bubble.BubbleGenerator = el.Class.extend({
 	// Special effects for bubble creation
 	creationEffects: function() {
 		// sound fx
-		// cc.audioEngine.playEffect(res.snd_creation_sfx); // snd_explodes_sfx
+		// cc.audioEngine.playEffect(res.snd_creation_sfx);
 		el.Audio.getInstance().playEffect(res.snd_creation_sfx);
-
-	},
-	
+	},	
 });
 
 
@@ -204,6 +261,7 @@ el.bubble.Bubble = el.Class.extend({
 
 	// Properties
 	m_node: null,
+	m_scene: null,
 	m_xAcceleration: null,
 	m_yAcceleration: null,
 	m_gravity: null,
@@ -416,7 +474,7 @@ el.bubble.Bubble = el.Class.extend({
 		if ( el.bubble.BubblesDestroyed % el.bubble.BubblesSFXStep == 0 ) {
 			
 			el.Audio.getInstance().playEffect(res.snd_baby_laughs_sfx);
-			// cc.audioEngine.playEffect(res.snd_baby_laughs_sfx); // snd_explodes_sfx			
+			// cc.audioEngine.playEffect(res.snd_baby_laughs_sfx);
 		}
 		
 		// get color of the bubble (or object)
