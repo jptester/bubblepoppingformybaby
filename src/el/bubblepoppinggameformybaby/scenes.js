@@ -128,8 +128,6 @@ el.MainLevel = cc.Scene.extend({
 		if ( this.m_optButton ) {
 			this.m_optButton.setEnabled(true);
 		}
-		
-
     },
 	
 	//
@@ -160,17 +158,36 @@ el.MainLevel = cc.Scene.extend({
 	//
 	optionsPopup:function(targetButton, event) {
 		
-		// if released touch/click
-		if ( cc.EventListener.TOUCH_ALL_AT_ONCE == event ) {
-			// only do it once
-			if ( this.m_optButton.isEnabled() ) {
-				// Pop up new scene
-				cc.director.pushScene(new cc.TransitionFade(0.25, new el.optionsPopUpScene()));
-			}
+		// if currently at mobile
+		if ( cc.sys.OS_ANDROID == cc.sys.os ) {
+			
+			// Manually Loading Ads
+			sdkbox.PluginInMobi.loadInterstitial();
 
-			// disable button
-			if ( this.m_optButton ) {
-				this.m_optButton.setEnabled(false);
+			/*
+			// show interstitial
+			if (sdkbox.PluginInMobi.isInterstitialReady()) {
+				console.log('inmobi interstitial ad is ready');
+				sdkbox.PluginInMobi.showInterstitial();
+			} else {
+				console.log('inmobi interstitial ad is not ready');
+			}
+			*/
+		}
+		else
+		{
+			// if released touch/click
+			if ( cc.EventListener.TOUCH_ALL_AT_ONCE == event ) {
+				// only do it once
+				if ( this.m_optButton.isEnabled() ) {
+					// Pop up new scene
+					cc.director.pushScene(new cc.TransitionFade(0.25, new el.optionsPopUpScene()));
+				}
+
+				// disable button
+				if ( this.m_optButton ) {
+					this.m_optButton.setEnabled(false);
+				}
 			}
 		}
 	},

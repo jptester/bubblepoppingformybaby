@@ -2,39 +2,13 @@
     "android": {
         "InMobi": {
             "version": 1, 
-            "account_id": "922cc696d9fa475097651b5cad78567d", 
+            "account_id": "c32565986d434164a09d8e3872c6a074", 
             "ads": {
-                "ad2": {
-                    "type": "interstitial", 
-                    "id": "1449919424310"
-                }, 
                 "ad1": {
-                    "width": 300, 
-                    "type": "banner", 
-                    "id": "1447081423897", 
-                    "alignment": "top", 
-                    "height": 50
-                }
+                    "type": "interstitial", 
+                    "id": "1458632151985"
+                }, 
             }
         }
     }, 
-    "ios": {
-        "InMobi": {
-            "version": 1, 
-            "account_id": "922cc696d9fa475097651b5cad78567d", 
-            "ads": {
-                "ad2": {
-                    "type": "interstitial", 
-                    "id": "1446442489192"
-                }, 
-                "ad1": {
-                    "width": 300, 
-                    "type": "banner", 
-                    "id": "1449005666241", 
-                    "alignment": "bottom", 
-                    "height": 50
-                }
-            }
-        }
-    }
 }
