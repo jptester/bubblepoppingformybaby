@@ -102,7 +102,16 @@ el.MainLevel = cc.Scene.extend({
 	// ui elements
 	m_counter: null,
 	m_optButton: null,
-	
+	m_bPlayedOnce: null,
+		
+	//
+	// Constructor function for Scene
+	//
+	ctor:function(){
+		this._super();
+		this.m_bPlayedOnce = false;
+	},
+		
     onEnter:function () {
         this._super();
 		
@@ -128,6 +137,17 @@ el.MainLevel = cc.Scene.extend({
 		if ( this.m_optButton ) {
 			this.m_optButton.setEnabled(true);
 		}
+		
+		// if currently at mobile
+		if ( !this.m_bPlayedOnce && cc.sys.OS_ANDROID == cc.sys.os ) {
+			
+			// Init needed external plugins (game-config)
+			el.gInitPlugIns();
+			
+			// Just play once
+			this.m_bPlayedOnce = true;
+		}
+		
     },
 	
 	//
@@ -158,36 +178,17 @@ el.MainLevel = cc.Scene.extend({
 	//
 	optionsPopup:function(targetButton, event) {
 		
-		// if currently at mobile
-		if ( cc.sys.OS_ANDROID == cc.sys.os ) {
-			
-			// Manually Loading Ads
-			sdkbox.PluginInMobi.loadInterstitial();
-
-			/*
-			// show interstitial
-			if (sdkbox.PluginInMobi.isInterstitialReady()) {
-				console.log('inmobi interstitial ad is ready');
-				sdkbox.PluginInMobi.showInterstitial();
-			} else {
-				console.log('inmobi interstitial ad is not ready');
+		// if released touch/click
+		if ( cc.EventListener.TOUCH_ALL_AT_ONCE == event ) {
+			// only do it once
+			if ( this.m_optButton.isEnabled() ) {
+				// Pop up new scene
+				cc.director.pushScene(new cc.TransitionFade(0.25, new el.optionsPopUpScene()));
 			}
-			*/
-		}
-		else
-		{
-			// if released touch/click
-			if ( cc.EventListener.TOUCH_ALL_AT_ONCE == event ) {
-				// only do it once
-				if ( this.m_optButton.isEnabled() ) {
-					// Pop up new scene
-					cc.director.pushScene(new cc.TransitionFade(0.25, new el.optionsPopUpScene()));
-				}
 
-				// disable button
-				if ( this.m_optButton ) {
-					this.m_optButton.setEnabled(false);
-				}
+			// disable button
+			if ( this.m_optButton ) {
+				this.m_optButton.setEnabled(false);
 			}
 		}
 	},

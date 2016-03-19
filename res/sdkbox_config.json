@@ -1,14 +1,15 @@
+
 {
     "android": {
-        "InMobi": {
-            "version": 1, 
-            "account_id": "c32565986d434164a09d8e3872c6a074", 
-            "ads": {
-                "ad1": {
+        "InMobi":{
+            "account_id":"c32565986d434164a09d8e3872c6a074",
+            "version":1,
+            "ads":{
+                "ad1":{
                     "type": "interstitial", 
                     "id": "1458632151985"
-                }, 
+                }
             }
         }
-    }, 
+    }
 }

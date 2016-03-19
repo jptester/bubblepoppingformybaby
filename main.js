@@ -80,9 +80,6 @@ cc.game.onStart = function(){
 			cc.audioEngine.playMusic(res.snd_music, true);
 		}
 
-		// Init needed external plugins (game-config)
-		el.gInitPlugIns();
-		
 		// if debug skip to x scene
 		if ( cc.game.config.debugMode == 1 ){
 			cc.director.runScene(new el.MainLevel());
