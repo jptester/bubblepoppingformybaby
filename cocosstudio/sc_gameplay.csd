@@ -17,13 +17,13 @@
             <FileData Type="Normal" Path="visualcontent/bg/bg01.jpg" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bubbles_icon_6" ActionTag="-638434999" Tag="15" IconVisible="False" LeftMargin="3.0000" RightMargin="697.0000" TopMargin="1.0000" BottomMargin="403.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="bubbles_icon_6" ActionTag="-638434999" Tag="15" IconVisible="False" LeftMargin="13.0000" RightMargin="687.0000" TopMargin="1.0000" BottomMargin="403.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="76.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="53.0000" Y="441.0000" />
+            <Position X="63.0000" Y="441.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0662" Y="0.9187" />
+            <PrePosition X="0.0787" Y="0.9187" />
             <PreSize X="0.1250" Y="0.1583" />
             <FileData Type="Normal" Path="visualcontent/ui/bubbles_icon.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
@@ -59,7 +59,7 @@
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="151.0002" Y="442.9997" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="234" B="0" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1888" Y="0.9229" />
             <PreSize X="0.1000" Y="0.0854" />
             <OutlineColor A="255" R="255" G="0" B="0" />
