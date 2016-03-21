@@ -13,10 +13,13 @@
             <Image Name="el_logo.png" />
             <Image Name="el_splashscreen.png" />
           </Folder>
-          <Folder Name="fonts" />
           <Folder Name="levels">
             <Image Name="blue_bubble.png" />
             <Image Name="green_bubble.png" />
+            <Image Name="inBubble_bear.png" />
+            <Image Name="inBubble_cat.png" />
+            <Image Name="inBubble_rabbit.png" />
+            <Image Name="inBubble_unicorn.png" />
             <Image Name="red_bubble.png" />
             <Image Name="yellow_bubble.png" />
           </Folder>
@@ -43,6 +46,7 @@
             <Image Name="x-pressed.png" />
           </Folder>
         </Folder>
+        <Project Name="anim_bubble_pop.csd" Type="Node" />
         <Project Name="sc_gameplay.csd" Type="Scene" />
         <Project Name="sc_options.csd" Type="Scene" />
         <Project Name="sc_splashscreen.csd" Type="Scene" />

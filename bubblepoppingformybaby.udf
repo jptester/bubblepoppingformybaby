@@ -31,9 +31,9 @@
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
         <OpenedDocuments>
-          <FilePathData Path="sc_options.csd" />
+          <FilePathData Path="anim_bubble_pop.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="sc_options.csd" />
+        <ActiveDocument Path="anim_bubble_pop.csd" />
       </Value>
     </Item>
   </Properties>

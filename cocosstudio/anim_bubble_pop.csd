@@ -1,17 +1,25 @@
 <GameFile>
-  <PropertyGroup Name="anim_bubble_pop" Type="Node" ID="254200a1-1d27-492a-86e8-edf2b772d3e7" Version="3.10.0.0" />
+  <PropertyGroup Name="anim_bubble_pop" Type="Node" ID="44c2cdfa-b9df-4b08-a1af-1f4161b1d8c4" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="40" Speed="1.0000">
-        <Timeline ActionTag="1824560160" Property="Position">
+        <Timeline ActionTag="-398744130" Property="Position">
           <PointFrame FrameIndex="0" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
-          <PointFrame FrameIndex="40" X="0.0000" Y="100.0000">
+          <PointFrame FrameIndex="40" X="0.0000" Y="80.0000">
             <EasingData Type="0" />
           </PointFrame>
         </Timeline>
-        <Timeline ActionTag="1824560160" Property="RotationSkew">
+        <Timeline ActionTag="-398744130" Property="Scale">
+          <ScaleFrame FrameIndex="0" X="1.0000" Y="1.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+          <ScaleFrame FrameIndex="40" X="1.0000" Y="1.0000">
+            <EasingData Type="0" />
+          </ScaleFrame>
+        </Timeline>
+        <Timeline ActionTag="-398744130" Property="RotationSkew">
           <ScaleFrame FrameIndex="0" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </ScaleFrame>
@@ -19,10 +27,7 @@
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
-        <Timeline ActionTag="1824560160" Property="BlendFunc">
-          <BlendFuncFrame FrameIndex="40" Tween="False" Src="1" Dst="771" />
-        </Timeline>
-        <Timeline ActionTag="1824560160" Property="Alpha">
+        <Timeline ActionTag="-398744130" Property="Alpha">
           <IntFrame FrameIndex="0" Value="255">
             <EasingData Type="0" />
           </IntFrame>
@@ -31,13 +36,13 @@
           </IntFrame>
         </Timeline>
       </Animation>
-      <ObjectData Name="Node" Tag="7" ctype="GameNodeObjectData">
+      <ObjectData Name="Node" Tag="8" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="inBubble_bear_1" ActionTag="1824560160" Alpha="12" Tag="8" IconVisible="False" LeftMargin="-73.0000" RightMargin="-73.0000" TopMargin="-163.0000" BottomMargin="27.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="inBubble_bear_1" ActionTag="-398744130" Alpha="76" Tag="3" IconVisible="False" LeftMargin="-73.0000" RightMargin="-73.0000" TopMargin="-124.0000" BottomMargin="-12.0000" ctype="SpriteObjectData">
             <Size X="146.0000" Y="136.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position Y="95.0000" />
+            <Position Y="56.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
