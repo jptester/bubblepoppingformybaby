@@ -17,11 +17,20 @@ var el = el || {};
 //
 // Global variable
 //
+el.bubble = el.bubble || {};
 el.bubble.BubblesDestroyed = 0;
-el.bubble.BubblesSFXStep = 10;
+el.bubble.BubblesSFXStep = 8;
 el.bubble.BubblesPoppedMultipleHit = 2;
 el.bubble.FirstBubblesBonusReached = 13;
 el.bubble.SecondBubblesBonusReached = 21;
+el.bubble.BabyLaughs = [
+	res.snd_baby_laughs0_sfx,
+	res.snd_baby_laughs1_sfx,
+	res.snd_baby_laughs2_sfx,
+	res.snd_baby_laughs3_sfx
+];
+el.bubble.CurrentBabyLaugh = Math.round(el.bubble.BabyLaughs.length * Math.random()) % el.bubble.BabyLaughs.length;
+el.bubble.m_animalName = "animalInside";
 
 //
 //  Bubble generator class
@@ -43,6 +52,14 @@ el.bubble.BubbleGenerator = el.Class.extend({
 	m_parentNode: null,
 	m_counter: null,
 	m_bubblesPopped: null,
+	m_insideAnimalArray : [
+		res.img_inBubble_bear,
+		res.img_inBubble_cat,
+		res.img_inBubble_rabbit,
+		res.img_inBubble_unicorn
+	],
+	m_currentInsideAnimal : 0,
+
 	
 	// private properties
 	_bubbles: null,
@@ -74,6 +91,9 @@ el.bubble.BubbleGenerator = el.Class.extend({
 				el.gELLog("No counter UI element found in scene");
 			}
 		}
+		
+		// Current animal
+		this.m_currentInsideAnimal = Math.round(this.m_insideAnimalArray.length * Math.random()) % this.m_insideAnimalArray.length;
 
 		// Private properties
 		this._bubbles = [];
@@ -145,6 +165,7 @@ el.bubble.BubbleGenerator = el.Class.extend({
 			
 			// look for any must kill bubble
 			for ( var i = 0; i < this._bubbles.length; i++ ) {
+				
 				// check if bubble must die
 				if (this._bubbles[i].m_killBubble) {
 					
@@ -153,7 +174,70 @@ el.bubble.BubbleGenerator = el.Class.extend({
 
 					// remove sprite
 					if ( bubble.getSprite().getParent() ) {
-						bubble.getSprite().getParent().removeChild(bubble.getSprite());
+						
+						
+						// If bubble has not been popped
+						if ( bubble.m_hasBeenPopped ) {
+							
+							// Get the animal inside
+							animalInside = bubble.getSprite().getChildByName(el.bubble.m_animalName);
+							
+							// Remove child
+							if ( animalInside ) {
+								
+								// Get current position
+								var currPos = bubble.getSprite().getPosition();
+								
+								// Remove
+								bubble.getSprite().removeChild(animalInside, false);
+								
+								// Create a new node
+								var node = new cc.Node();
+								
+								// Add animal to scene
+								this.m_parentNode.addChild(node);
+								
+								// Add animal to node
+								node.addChild(animalInside);
+								
+								// Set position
+								node.setPosition(currPos);
+								
+								// Set animation
+								if ( el.bubble.animBubblePop ) {
+									
+									// get new action
+									var action = el.bubble.animBubblePop.clone();
+									
+									// set auto destruction function
+									action.setLastFrameCallFunc(
+										function(){
+											// get target of animation
+											var target = this.getTarget();
+											if ( target && target.getParent() ) {
+												
+												// if there is a valid target, remove it
+												target.getParent().removeChild(target);
+											}
+										});
+
+									// run any valid action
+									node.runAction(action);
+									
+									// Get timelines
+									var timeLines = action.getTimelines();
+									for (timeLine of timeLines ) {
+										timeLine.setNode(animalInside);
+									}
+									
+									// Play animation
+									action.gotoFrameAndPlay(0, action.getDuration(), false); //play animation									
+								}
+							}
+						}
+
+						// Remove bubble
+						bubble.getSprite().getParent().removeChild(bubble.getSprite());						
 					}
 					
 					// Sum bubbles popped
@@ -234,8 +318,14 @@ el.bubble.BubbleGenerator = el.Class.extend({
 		// give every bubble a different y velocity (it is always negative)
 		var gravity = -(Math.round(Math.random() * this.m_gravity)) + this._minGravity;
 		
+		// Get next image for animals inside
+		animalInside = this.m_insideAnimalArray[this.m_currentInsideAnimal];
+		
+		// Move current animal index
+		this.m_currentInsideAnimal = ( this.m_currentInsideAnimal + 1 ) % this.m_insideAnimalArray.length;
+		
 		// add new bubble to parent node
-		var newBubble = new el.bubble.Bubble(imgForBubble, xAcceleration, yAcceleration, gravity, this.m_position);
+		var newBubble = new el.bubble.Bubble(imgForBubble, animalInside, xAcceleration, yAcceleration, gravity, this.m_position);
 		this.m_parentNode.addChild(newBubble.getSprite());
 		this._bubbles.push(newBubble);
 		
@@ -271,7 +361,7 @@ el.bubble.Bubble = el.Class.extend({
 
 	
 	// Constructor for level
-	ctor: function (image, xAcceleration, yAcceleration, gravity, initPoint) {
+	ctor: function (image, insideAnimal, xAcceleration, yAcceleration, gravity, initPoint) {
 		
 		// img bubble
 		var bubbleSprite = new cc.Sprite(image);
@@ -280,17 +370,24 @@ el.bubble.Bubble = el.Class.extend({
 		}
 		
 		// image for bright
-		var brightSprite = new cc.Sprite(res.img_bright);
-		if ( !brightSprite ) {
-			throw new Error("No valid bright sprite for bubble");
-		}		
+		//var brightSprite = new cc.Sprite(res.img_bright);
+		//if ( !brightSprite ) {
+		//	throw new Error("No valid bright sprite for bubble");
+		//}		
 		
+		// image for "inside bubble animal"
+		var animalSprite = new cc.Sprite(insideAnimal);
+		animalSprite.setName(el.bubble.m_animalName);
+		if ( !animalSprite ) {
+			throw new Error("No valid bright sprite for bubble");
+		}	
+
 		// main node
 		this.m_node = new cc.Node();
 		
 		// add bubble and bright to node
 		this.m_node.addChild(bubbleSprite);
-		this.m_node.addChild(brightSprite);
+		this.m_node.addChild(animalSprite);
 		
 		// add effects to bubble sprite
 		//var rotation = new cc.RotateBy(3 + Math.round(Math.random() * 5), 360);
@@ -322,6 +419,7 @@ el.bubble.Bubble = el.Class.extend({
 		
 		// This bubble has not been popped (yet)
 		this.m_hasBeenPopped = false;
+		
 		
 		// Add touch event listener
 		var touchEvent = cc.EventListener.create({
@@ -473,7 +571,12 @@ el.bubble.Bubble = el.Class.extend({
 		// special effect
 		if ( el.bubble.BubblesDestroyed % el.bubble.BubblesSFXStep == 0 ) {
 			
-			el.Audio.getInstance().playEffect(res.snd_baby_laughs_sfx);
+			// Play baby sound effect
+			el.Audio.getInstance().playEffect(el.bubble.BabyLaughs[el.bubble.CurrentBabyLaugh]);
+			
+			// Move pointer of sound effect to the next baby sound
+			el.bubble.CurrentBabyLaugh = (el.bubble.CurrentBabyLaugh + 1 ) % el.bubble.BabyLaughs.length;
+			
 			// cc.audioEngine.playEffect(res.snd_baby_laughs_sfx);
 		}
 		

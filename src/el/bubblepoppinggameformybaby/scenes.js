@@ -14,6 +14,12 @@
 var el = el || {};
 
 //
+// Global variables
+// 
+el.bubble = el.bubble || {};
+el.bubble.animBubblePop = null;
+
+//
 //  Main layer for any CocosStudio scene
 //  Creator : JP
 //  Date: 20/01/2016
@@ -108,8 +114,35 @@ el.MainLevel = cc.Scene.extend({
 	// Constructor function for Scene
 	//
 	ctor:function(){
+		
+		// Loads one time items
+		
+		// Run super method
 		this._super();
+		
+		// Setup one time elements
 		this.m_bPlayedOnce = false;
+
+		// Bubble pop animation
+		{
+			// Get node
+			var json = ccs.load(res.anim_bubble_pop);			
+
+			// if json was read
+			if ( json ) {
+
+				// Actions
+				var action = json.action;				
+				if (action && action instanceof ccs.ActionTimeline ) {
+					
+					// If animation available save it for later use
+					el.bubble.animBubblePop = action;
+				}
+				else {
+					throw new Error("No valid pop animation found");
+				}
+			}
+		}
 	},
 		
     onEnter:function () {

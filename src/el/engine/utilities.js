@@ -143,9 +143,6 @@ el.gGetCCSContent = function(ccsContent, containerNode, lastFrameCallFunc) {
 	var json = ccs.load(ccsContent);
 	containerNode.addChild(json.node);
 	
-	// Actions
-	var action;
-
 	// If there is an animation
 	var action = json.action;
 	if (action) {
