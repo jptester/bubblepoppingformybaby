@@ -1,0 +1,398 @@
+{
+  "ID": "d2e58e60-92df-4faa-9f40-a0c50307e438",
+  "Version": "3.10.0.0",
+  "Name": "layer_game_content",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/levels/blue_bubble.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 383.0,
+              "Y": 259.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4787,
+              "Y": 0.5396
+            },
+            "PreSize": {
+              "X": 0.1825,
+              "Y": 0.2833
+            },
+            "LeftMargin": 310.0,
+            "RightMargin": 344.0,
+            "TopMargin": 153.0,
+            "BottomMargin": 191.0,
+            "Tag": 2,
+            "ActionTag": -1414465319,
+            "Size": {
+              "X": 146.0,
+              "Y": 136.0
+            },
+            "Name": "blue_bubble_1",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/levels/green_bubble.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 383.0,
+              "Y": 259.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4787,
+              "Y": 0.5396
+            },
+            "PreSize": {
+              "X": 0.1825,
+              "Y": 0.2833
+            },
+            "LeftMargin": 310.0,
+            "RightMargin": 344.0,
+            "TopMargin": 153.0,
+            "BottomMargin": 191.0,
+            "Tag": 3,
+            "ActionTag": -340554469,
+            "Size": {
+              "X": 146.0,
+              "Y": 136.0
+            },
+            "Name": "green_bubble_2",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/levels/inBubble_bear.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 383.0,
+              "Y": 259.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4787,
+              "Y": 0.5396
+            },
+            "PreSize": {
+              "X": 0.1825,
+              "Y": 0.2833
+            },
+            "LeftMargin": 310.0,
+            "RightMargin": 344.0,
+            "TopMargin": 153.0,
+            "BottomMargin": 191.0,
+            "Tag": 4,
+            "ActionTag": -303392029,
+            "Size": {
+              "X": 146.0,
+              "Y": 136.0
+            },
+            "Name": "inBubble_bear_3",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/levels/inBubble_cat.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 383.0,
+              "Y": 259.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4787,
+              "Y": 0.5396
+            },
+            "PreSize": {
+              "X": 0.1825,
+              "Y": 0.2833
+            },
+            "LeftMargin": 310.0,
+            "RightMargin": 344.0,
+            "TopMargin": 153.0,
+            "BottomMargin": 191.0,
+            "Tag": 5,
+            "ActionTag": 275089512,
+            "Size": {
+              "X": 146.0,
+              "Y": 136.0
+            },
+            "Name": "inBubble_cat_4",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/levels/inBubble_rabbit.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 383.0,
+              "Y": 259.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4787,
+              "Y": 0.5396
+            },
+            "PreSize": {
+              "X": 0.1825,
+              "Y": 0.2833
+            },
+            "LeftMargin": 310.0,
+            "RightMargin": 344.0,
+            "TopMargin": 153.0,
+            "BottomMargin": 191.0,
+            "Tag": 6,
+            "ActionTag": 2022398812,
+            "Size": {
+              "X": 146.0,
+              "Y": 136.0
+            },
+            "Name": "inBubble_rabbit_5",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/levels/inBubble_unicorn.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 383.0,
+              "Y": 259.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4787,
+              "Y": 0.5396
+            },
+            "PreSize": {
+              "X": 0.1825,
+              "Y": 0.2833
+            },
+            "LeftMargin": 310.0,
+            "RightMargin": 344.0,
+            "TopMargin": 153.0,
+            "BottomMargin": 191.0,
+            "Tag": 7,
+            "ActionTag": 833966124,
+            "Size": {
+              "X": 146.0,
+              "Y": 136.0
+            },
+            "Name": "inBubble_unicorn_6",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/levels/red_bubble.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 383.0,
+              "Y": 259.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4787,
+              "Y": 0.5396
+            },
+            "PreSize": {
+              "X": 0.1825,
+              "Y": 0.2833
+            },
+            "LeftMargin": 310.0,
+            "RightMargin": 344.0,
+            "TopMargin": 153.0,
+            "BottomMargin": 191.0,
+            "Tag": 8,
+            "ActionTag": 892967376,
+            "Size": {
+              "X": 146.0,
+              "Y": 136.0
+            },
+            "Name": "red_bubble_7",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/levels/yellow_bubble.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 383.0,
+              "Y": 259.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4787,
+              "Y": 0.5396
+            },
+            "PreSize": {
+              "X": 0.1825,
+              "Y": 0.2833
+            },
+            "LeftMargin": 310.0,
+            "RightMargin": 344.0,
+            "TopMargin": 153.0,
+            "BottomMargin": 191.0,
+            "Tag": 9,
+            "ActionTag": 315716309,
+            "Size": {
+              "X": 146.0,
+              "Y": 136.0
+            },
+            "Name": "yellow_bubble_8",
+            "ctype": "SpriteObjectData"
+          }
+        ],
+        "Size": {
+          "X": 800.0,
+          "Y": 480.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "visualcontent/levels/blue_bubble.png",
+        "visualcontent/levels/green_bubble.png",
+        "visualcontent/levels/inBubble_bear.png",
+        "visualcontent/levels/inBubble_cat.png",
+        "visualcontent/levels/inBubble_rabbit.png",
+        "visualcontent/levels/inBubble_unicorn.png",
+        "visualcontent/levels/red_bubble.png",
+        "visualcontent/levels/yellow_bubble.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

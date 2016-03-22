@@ -50,6 +50,7 @@
         <Project Name="sc_gameplay.csd" Type="Scene" />
         <Project Name="sc_options.csd" Type="Scene" />
         <Project Name="sc_splashscreen.csd" Type="Scene" />
+        <Project Name="layer_game_content.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>
