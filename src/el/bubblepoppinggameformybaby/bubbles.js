@@ -386,8 +386,8 @@ el.bubble.Bubble = el.Class.extend({
 		this.m_node = new cc.Node();
 		
 		// add bubble and bright to node
-		this.m_node.addChild(bubbleSprite);
 		this.m_node.addChild(animalSprite);
+		this.m_node.addChild(bubbleSprite);
 		
 		// add effects to bubble sprite
 		//var rotation = new cc.RotateBy(3 + Math.round(Math.random() * 5), 360);
