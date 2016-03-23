@@ -153,9 +153,9 @@ el.bubble.BubbleGenerator = el.Class.extend({
 			this.m_lastTimeUpdate = 0;
 			
 			// update every bubble
-			for (var bubble of this._bubbles) {
+			for (var bubbleID in this._bubbles) {
 				// update bubble
-				bubble.updateBubble();		
+				this._bubbles[bubbleID].updateBubble();		
 			}
 			
 			// Amount of bubbles popped
@@ -233,8 +233,8 @@ el.bubble.BubbleGenerator = el.Class.extend({
 									
 									// Get timelines
 									var timeLines = action.getTimelines();
-									for (timeLine of timeLines ) {
-										timeLine.setNode(animalInside);
+									for (var timeLine in timeLines ) {
+										timeLines[timeLine].setNode(animalInside);
 									}
 									
 									// Play animation

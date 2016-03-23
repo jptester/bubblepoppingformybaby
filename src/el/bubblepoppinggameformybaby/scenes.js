@@ -276,9 +276,9 @@ el.MainLevel = cc.Scene.extend({
 		var iBubblesPopped = 0;
 		
 		// update generators
-		for ( generator of this.m_bubblesGenerators ) {
-			generator.updateGenerator();
-			iBubblesPopped += generator.getBubblesPopped();
+		for ( var generator in this.m_bubblesGenerators ) {
+			this.m_bubblesGenerators[generator].updateGenerator();
+			iBubblesPopped += this.m_bubblesGenerators[generator].getBubblesPopped();
 		}
 		
 		// If more than 'n' bubbles are popped - do something special
