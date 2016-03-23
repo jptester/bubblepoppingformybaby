@@ -23,6 +23,7 @@ el.bubble.BubblesSFXStep = 8;
 el.bubble.BubblesPoppedMultipleHit = 2;
 el.bubble.FirstBubblesBonusReached = 13;
 el.bubble.SecondBubblesBonusReached = 21;
+el.bubble.ShowAddBubblesPoppedCounter = 55;
 el.bubble.BabyLaughs = [
 	res.snd_baby_laughs0_sfx,
 	res.snd_baby_laughs1_sfx,
@@ -188,7 +189,7 @@ el.bubble.BubbleGenerator = el.Class.extend({
 								// Get current position
 								var currPos = bubble.getSprite().getPosition();
 								
-								// Remove
+								// Remove bubble sprite
 								bubble.getSprite().removeChild(animalInside, false);
 								
 								// Create a new node
@@ -216,8 +217,14 @@ el.bubble.BubbleGenerator = el.Class.extend({
 											var target = this.getTarget();
 											if ( target && target.getParent() ) {
 												
+												// release child
+												var sprite = target.getChildByName(el.bubble.m_animalName);
+												if ( sprite ) {
+													sprite.release();
+												}
+												
 												// if there is a valid target, remove it
-												target.getParent().removeChild(target);
+												target.getParent().removeChild(target);												
 											}
 										});
 
@@ -262,6 +269,14 @@ el.bubble.BubbleGenerator = el.Class.extend({
 								particleEmmiter2.setAutoRemoveOnFinish(true);
 								this.m_parentNode.addChild(particleEmmiter2);
 							}
+						}
+						
+						// If android and inMobi plug in
+						if ( cc.sys.OS_ANDROID == cc.sys.os && 
+							 el.bubble.bool_ImplementAds && 
+							 (counter + iBubblesPopped + 20) % el.bubble.ShowAddBubblesPoppedCounter == 0 ) {
+							// Limit has been reached - load interestial
+							el.Game.getInstance().playInMobiAd();
 						}
 					}
 					
@@ -380,7 +395,10 @@ el.bubble.Bubble = el.Class.extend({
 		animalSprite.setName(el.bubble.m_animalName);
 		if ( !animalSprite ) {
 			throw new Error("No valid bright sprite for bubble");
-		}	
+		}
+		else{
+			animalSprite.retain();
+		}
 
 		// main node
 		this.m_node = new cc.Node();

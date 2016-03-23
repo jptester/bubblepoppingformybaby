@@ -18,6 +18,7 @@ var el = el || {};
 // 
 el.bubble = el.bubble || {};
 el.bubble.animBubblePop = null;
+el.bubble.playedOnce = false;
 
 //
 //  Main layer for any CocosStudio scene
@@ -108,7 +109,6 @@ el.MainLevel = cc.Scene.extend({
 	// ui elements
 	m_counter: null,
 	m_optButton: null,
-	m_bPlayedOnce: null,
 		
 	//
 	// Constructor function for Scene
@@ -120,9 +120,6 @@ el.MainLevel = cc.Scene.extend({
 		// Run super method
 		this._super();
 		
-		// Setup one time elements
-		this.m_bPlayedOnce = false;
-
 		// Bubble pop animation
 		{
 			// Get node
@@ -137,12 +134,22 @@ el.MainLevel = cc.Scene.extend({
 					
 					// If animation available save it for later use
 					el.bubble.animBubblePop = action;
+					el.bubble.animBubblePop.retain();
 				}
 				else {
 					throw new Error("No valid pop animation found");
 				}
 			}
 		}
+		
+		// if currently at mobile
+		if ( el.bubble.bool_ImplementAds && cc.sys.OS_ANDROID == cc.sys.os ) {
+			
+			// Init needed external plugins (game-config)
+			el.Game.getInstance().initPlugIns();
+		}
+		
+
 	},
 		
     onEnter:function () {
@@ -170,17 +177,6 @@ el.MainLevel = cc.Scene.extend({
 		if ( this.m_optButton ) {
 			this.m_optButton.setEnabled(true);
 		}
-		
-		// if currently at mobile
-		if ( !this.m_bPlayedOnce && cc.sys.OS_ANDROID == cc.sys.os ) {
-			
-			// Init needed external plugins (game-config)
-			el.gInitPlugIns();
-			
-			// Just play once
-			this.m_bPlayedOnce = true;
-		}
-		
     },
 	
 	//
@@ -299,7 +295,7 @@ el.MainLevel = cc.Scene.extend({
 // Date: 15/03/2016
 //
 el.optionsPopUpScene = cc.Scene.extend({
-	
+			
 	//
 	// On enter function
 	//
@@ -312,6 +308,16 @@ el.optionsPopUpScene = cc.Scene.extend({
 		
 		// Load UI elements and provide them with functionality
 		this.setupUI();
+		
+		// if ad hasn't been shown
+		if ( !el.bubble.playedOnce ) {
+			
+			// first, do not show ads again
+			el.bubble.playedOnce = true;
+			
+			// second, show interestitial
+			el.Game.getInstance().playInMobiAd();
+		}
 
     },
 	
@@ -406,7 +412,15 @@ el.optionsPopUpScene = cc.Scene.extend({
 			// If native app
 			if (cc.sys.isNative)
 			{
-				cc.director.end();
+				if ( el.bubble.bool_ImplementAds && cc.sys.OS_ANDROID == cc.sys.os && el.Game.getInstance().isInMobiInterestitialReady() ) {
+					el.Game.adDismissed = function() {
+						cc.director.end();
+					}
+					el.Game.getInstance().playInMobiAd();
+				}
+				else {
+					cc.director.end();
+				}
 			}
 			else {
 				window.history && window.history.go(-1);
