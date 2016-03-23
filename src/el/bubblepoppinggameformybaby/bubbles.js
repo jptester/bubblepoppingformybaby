@@ -23,7 +23,7 @@ el.bubble.BubblesSFXStep = 8;
 el.bubble.BubblesPoppedMultipleHit = 2;
 el.bubble.FirstBubblesBonusReached = 13;
 el.bubble.SecondBubblesBonusReached = 21;
-el.bubble.ShowAddBubblesPoppedCounter = 55;
+el.bubble.ShowAddBubblesPoppedCounter = 99;
 el.bubble.BabyLaughs = [
 	res.snd_baby_laughs0_sfx,
 	res.snd_baby_laughs1_sfx,
@@ -274,7 +274,7 @@ el.bubble.BubbleGenerator = el.Class.extend({
 						// If android and inMobi plug in
 						if ( cc.sys.OS_ANDROID == cc.sys.os && 
 							 el.bubble.bool_ImplementAds && 
-							 (counter + iBubblesPopped + 20) % el.bubble.ShowAddBubblesPoppedCounter == 0 ) {
+							 (counter + iBubblesPopped + 33) % el.bubble.ShowAddBubblesPoppedCounter == 0 ) {
 							// Limit has been reached - load interestial
 							el.Game.getInstance().playInMobiAd();
 						}
