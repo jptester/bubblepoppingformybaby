@@ -1,0 +1,7 @@
+TO DO List:
+
+1. Clean code (it's messy and propmt to fail)
+2. InMobi ad when options button is tapped should wait until fade-in animation ends to show
+3. Check avast - inmobi - sdkbox virus like behavior warning
+4. Change opt background, I don't think they fit anymore
+5. More baby sounds

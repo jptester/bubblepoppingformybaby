@@ -32,8 +32,9 @@
       <Value ctype="TabsInfo">
         <OpenedDocuments>
           <FilePathData Path="layer_game_content.csd" />
+          <FilePathData Path="sc_options.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="layer_game_content.csd" />
+        <ActiveDocument Path="sc_options.csd" />
       </Value>
     </Item>
   </Properties>
