@@ -100,13 +100,19 @@ el.bubble.BubbleGenerator = el.Class.extend({
 		this._bubbles = [];
 		this._currentIndex = Math.round(this.m_bubblesArray.length * Math.random()) % this.m_bubblesArray.length;
 		this._minGravity = -5;
+		
 	},
 	
 	// Update generator
-	updateGenerator: function () {
+	updateGenerator: function (mousePos) {
 		
 		// get delta time
 		var deltaTime = cc.director.getDeltaTime();
+		
+		// Check popped bubbles
+		{
+			this.checkPoppedBubbles(mousePos);
+		}
 
 		// updating block
 		{
@@ -118,6 +124,53 @@ el.bubble.BubbleGenerator = el.Class.extend({
 			this.creationBlock(deltaTime);
 		}
 	},
+
+	//
+	// Mouse popping check method
+	//
+	checkPoppedBubbles: function(mousePos) {
+		
+		//if valid position
+		if ( !mousePos ) {
+			return;
+		}
+		
+		//Get the position of the current point relative to the button
+		var hitPoint = mousePos;
+		
+		// check every bubble
+		for (var bubbleID in this._bubbles) {
+			
+			// update bubble
+			var target = this._bubbles[bubbleID].getSprite();
+			
+			// if target 
+			if ( !target ) {
+				continue;
+			}
+			
+			var s = target.getBoundingBoxToWorld();
+			var rect = cc.rect(target.getPositionX() - s.width / 2, target.getPositionY() - s.height / 2, s.width, s.height);
+
+			//Check the click area
+			if (cc.rectContainsPoint(rect, hitPoint)) {       
+				
+				// bubble destroyed
+				el.bubble.BubblesDestroyed++;
+
+				// popping bubble effects
+				target.m_parentBubble.poppingBubbleEffects(target);
+				
+				// Kill bubble
+				target.m_parentBubble.killBubble();
+				
+				// This bubble has been popped
+				target.m_parentBubble.m_hasBeenPopped = true;
+
+			}			
+		}		
+	},
+
 	
 	// Creation function
 	creationBlock: function(deltaTime) {
@@ -438,12 +491,13 @@ el.bubble.Bubble = el.Class.extend({
 		// This bubble has not been popped (yet)
 		this.m_hasBeenPopped = false;
 		
-		
+		/*
 		// Add touch event listener
 		var touchEvent = cc.EventListener.create({
 			event: cc.EventListener.TOUCH_ONE_BY_ONE,
 			swallowTouches: true,
 			onTouchBegan: function(touch, event) {
+				
 				
 				// get target
 				if ( !event.getCurrentTarget() ) {
@@ -479,19 +533,13 @@ el.bubble.Bubble = el.Class.extend({
 					target.m_parentBubble.m_hasBeenPopped = true;
 
 				}
-				return false;			
-			},
-			onTouchMoved: function(touch, event) {
-				cc.log("move");
-			},
-			onTouchEnded: function(touch, event) {
-				cc.log("end");
-				return false;
+				return false;					
 			},
 		});
 		
 		// Add the event to the event manager
 		cc.eventManager.addListener(touchEvent, this.m_node);
+		*/
 	},
 	
 	// Construct color

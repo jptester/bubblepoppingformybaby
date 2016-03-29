@@ -19,6 +19,7 @@ var el = el || {};
 el.bubble = el.bubble || {};
 el.bubble.animBubblePop = null;
 el.bubble.playedOnce = false;
+el.bubble.MousePosition = null;
 
 //
 //  Main layer for any CocosStudio scene
@@ -148,8 +149,6 @@ el.MainLevel = cc.Scene.extend({
 			// Init needed external plugins (game-config)
 			el.Game.getInstance().initPlugIns();
 		}
-		
-
 	},
 		
     onEnter:function () {
@@ -171,12 +170,44 @@ el.MainLevel = cc.Scene.extend({
 
 			// start game
 			this.startGame();
+			
+			// Mouse track logic
+			{
+				// Add touch event listener
+				var touchEvent = cc.EventListener.create({
+					event: cc.EventListener.TOUCH_ONE_BY_ONE,
+					swallowTouches: true,
+					onTouchBegan: function(touch, event) {
+											
+						// get target
+						if ( !event.getCurrentTarget() ) {
+							return false;
+						}
+						
+						// Keep track of touch event
+						el.bubble.MousePosition = touch.getLocation();
+						return true;
+						
+					},
+					onTouchMoved: function(touch, event) {
+						el.bubble.MousePosition = touch.getLocation();
+					},
+					onTouchEnded: function(touch, event) {
+						el.bubble.MousePosition = null;
+						return false;
+					},
+				});
+				
+				// Add the event to the event manager
+				cc.eventManager.addListener(touchEvent, this._layer);
+			}
+			
 		}
 		
 		// enable options button
 		if ( this.m_optButton ) {
 			this.m_optButton.setEnabled(true);
-		}
+		}		
     },
 	
 	//
@@ -261,6 +292,9 @@ el.MainLevel = cc.Scene.extend({
 			
 			// add bubble generator to array
 			this.m_bubblesGenerators.push(bubbleGenerator);
+			
+			// Reset mouse track
+			el.bubble.MousePosition = null;
 		}
 	},
 	
@@ -277,7 +311,7 @@ el.MainLevel = cc.Scene.extend({
 		
 		// update generators
 		for ( var generator in this.m_bubblesGenerators ) {
-			this.m_bubblesGenerators[generator].updateGenerator();
+			this.m_bubblesGenerators[generator].updateGenerator(el.bubble.MousePosition);
 			iBubblesPopped += this.m_bubblesGenerators[generator].getBubblesPopped();
 		}
 		
@@ -286,7 +320,8 @@ el.MainLevel = cc.Scene.extend({
 		if ( iBubblesPopped >= el.bubble.BubblesPoppedMultipleHit ) {
 			el.Audio.getInstance().playEffect(res.snd_baby_sound_sfx);
 		}
-	}
+	},
+	
 });
 
 //
