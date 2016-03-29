@@ -149,6 +149,11 @@ el.bubble.BubbleGenerator = el.Class.extend({
 				continue;
 			}
 			
+			// if target 
+			if ( target.m_parentBubble && target.m_parentBubble.isBubbleDead() ) {
+				continue;
+			}
+			
 			var s = target.getBoundingBoxToWorld();
 			var rect = cc.rect(target.getPositionX() - s.width / 2, target.getPositionY() - s.height / 2, s.width, s.height);
 
@@ -632,6 +637,13 @@ el.bubble.Bubble = el.Class.extend({
 		
 		// set this bubble to die
 		this.m_killBubble = true;
+	},
+	
+	// kill a bubble - make it go
+	isBubbleDead: function() {
+		
+		// set this bubble to die
+		return this.m_killBubble;
 	},
 	
 	// special effects for bubble popping
