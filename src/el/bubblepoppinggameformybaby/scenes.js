@@ -309,6 +309,15 @@ el.optionsPopUpScene = cc.Scene.extend({
 		// Load UI elements and provide them with functionality
 		this.setupUI();
 		
+    },
+	
+	//
+	// Once finished enter animation
+	//
+	onEnterTransitionDidFinish: function() {
+		
+		this._super();
+		
 		// if ad hasn't been shown
 		if ( !el.bubble.playedOnce ) {
 			
@@ -318,8 +327,9 @@ el.optionsPopUpScene = cc.Scene.extend({
 			// second, show interestitial
 			el.Game.getInstance().playInMobiAd();
 		}
-
-    },
+		
+	},
+	
 	
 	//
 	// Setup UI

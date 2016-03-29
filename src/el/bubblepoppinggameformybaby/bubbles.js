@@ -19,7 +19,7 @@ var el = el || {};
 //
 el.bubble = el.bubble || {};
 el.bubble.BubblesDestroyed = 0;
-el.bubble.BubblesSFXStep = 8;
+el.bubble.BubblesSFXStep = 6;
 el.bubble.BubblesPoppedMultipleHit = 2;
 el.bubble.FirstBubblesBonusReached = 13;
 el.bubble.SecondBubblesBonusReached = 21;
@@ -480,7 +480,14 @@ el.bubble.Bubble = el.Class.extend({
 
 				}
 				return false;			
-			}
+			},
+			onTouchMoved: function(touch, event) {
+				cc.log("move");
+			},
+			onTouchEnded: function(touch, event) {
+				cc.log("end");
+				return false;
+			},
 		});
 		
 		// Add the event to the event manager
