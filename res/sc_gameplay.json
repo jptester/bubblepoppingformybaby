@@ -223,8 +223,13 @@
             "ctype": "ButtonObjectData"
           },
           {
-            "FontSize": 36,
+            "FontSize": 34,
             "LabelText": "0000",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "visualcontent/fonts/OpenSans-Regular.ttf",
+              "Plist": ""
+            },
             "HorizontalAlignmentType": "HT_Right",
             "VerticalAlignmentType": "VT_Center",
             "OutlineColor": {
@@ -245,10 +250,10 @@
             },
             "Position": {
               "X": 151.0002,
-              "Y": 442.9997
+              "Y": 442.9995
             },
             "Scale": {
-              "ScaleX": 1.0,
+              "ScaleX": 0.9302,
               "ScaleY": 1.0
             },
             "CColor": {},
@@ -258,18 +263,18 @@
               "Y": 0.9229
             },
             "PreSize": {
-              "X": 0.1,
-              "Y": 0.0854
+              "X": 0.0975,
+              "Y": 0.0958
             },
-            "LeftMargin": 111.0002,
-            "RightMargin": 608.9998,
-            "TopMargin": 16.5003,
-            "BottomMargin": 422.4997,
+            "LeftMargin": 112.0002,
+            "RightMargin": 609.9998,
+            "TopMargin": 14.0005,
+            "BottomMargin": 419.9995,
             "Tag": 7,
             "ActionTag": 360222315,
             "Size": {
-              "X": 80.0,
-              "Y": 41.0
+              "X": 78.0,
+              "Y": 46.0
             },
             "Name": "txt_counter",
             "ctype": "TextObjectData"
@@ -284,6 +289,7 @@
       },
       "UsedResources": [
         "visualcontent/bg/bg01.jpg",
+        "visualcontent/fonts/OpenSans-Regular.ttf",
         "visualcontent/ui/bubbles_icon.png",
         "visualcontent/ui/counter_icon.png",
         "visualcontent/ui/gear-dissabled.png",

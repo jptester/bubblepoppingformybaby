@@ -359,6 +359,9 @@ el.optionsPopUpScene = cc.Scene.extend({
 			// first, do not show ads again
 			el.bubble.playedOnce = true;
 			
+			// stop mouse/touch track
+			el.bubble.MousePosition = null;
+			
 			// second, show interestitial
 			el.Game.getInstance().playInMobiAd();
 		}
@@ -461,6 +464,10 @@ el.optionsPopUpScene = cc.Scene.extend({
 					el.Game.adDismissed = function() {
 						cc.director.end();
 					}
+					// stop mouse/touch track
+					el.bubble.MousePosition = null;
+					
+					// Show ad
 					el.Game.getInstance().playInMobiAd();
 				}
 				else {

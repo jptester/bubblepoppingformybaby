@@ -351,6 +351,11 @@
           {
             "FontSize": 12,
             "LabelText": "Bubble Popping for my baby\n\nGame design\nJPTester & John Alan Kennedy\nDevelopment\nJPTester\nArt\nTokirokawa\nMusic\nJohn Alan Kennedy\nSound effects\nhttp://www.freesfx.co.uk\n\nEntretenimiento Lobo",
+            "FontResource": {
+              "Type": "Normal",
+              "Path": "visualcontent/fonts/OpenSans-Regular.ttf",
+              "Plist": ""
+            },
             "HorizontalAlignmentType": "HT_Center",
             "OutlineColor": {
               "G": 0,
@@ -366,7 +371,7 @@
             "AnchorPoint": {},
             "Position": {
               "X": 482.0,
-              "Y": 111.008
+              "Y": 105.024
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -382,21 +387,21 @@
             "PositionPercentYEnabled": true,
             "PrePosition": {
               "X": 0.6025,
-              "Y": 0.2313
+              "Y": 0.2188
             },
             "PreSize": {
-              "X": 0.2075,
-              "Y": 0.4375
+              "X": 0.2087,
+              "Y": 0.4667
             },
             "LeftMargin": 482.0,
-            "RightMargin": 152.0,
-            "TopMargin": 158.992,
-            "BottomMargin": 111.008,
+            "RightMargin": 151.0,
+            "TopMargin": 150.976,
+            "BottomMargin": 105.024,
             "Tag": 12,
             "ActionTag": 757020816,
             "Size": {
-              "X": 166.0,
-              "Y": 210.0
+              "X": 167.0,
+              "Y": 224.0
             },
             "Name": "txt_credits_title",
             "ctype": "TextObjectData"
@@ -531,6 +536,7 @@
       },
       "UsedResources": [
         "visualcontent/bg/popup_bg.png",
+        "visualcontent/fonts/OpenSans-Regular.ttf",
         "visualcontent/ui/credits.png",
         "visualcontent/ui/door_disabled.png",
         "visualcontent/ui/door_normal.png",

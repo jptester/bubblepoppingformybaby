@@ -333,6 +333,10 @@ el.bubble.BubbleGenerator = el.Class.extend({
 						if ( cc.sys.OS_ANDROID == cc.sys.os && 
 							 el.bubble.bool_ImplementAds && 
 							 (counter + iBubblesPopped + 33) % el.bubble.ShowAddBubblesPoppedCounter == 0 ) {
+							
+							// Stop mouse/touch move track
+							el.bubble.MousePosition = null;
+								 
 							// Limit has been reached - load interestial
 							el.Game.getInstance().playInMobiAd();
 						}

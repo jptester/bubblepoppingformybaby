@@ -54,14 +54,15 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="txt_counter" ActionTag="360222315" Tag="7" IconVisible="False" LeftMargin="111.0002" RightMargin="608.9998" TopMargin="16.5003" BottomMargin="422.4997" FontSize="36" LabelText="0000" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
-            <Size X="80.0000" Y="41.0000" />
+          <AbstractNodeData Name="txt_counter" ActionTag="360222315" Tag="7" IconVisible="False" LeftMargin="112.0002" RightMargin="609.9998" TopMargin="14.0005" BottomMargin="419.9995" FontSize="34" LabelText="0000" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+            <Size X="78.0000" Y="46.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="151.0002" Y="442.9997" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Position X="151.0002" Y="442.9995" />
+            <Scale ScaleX="0.9302" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1888" Y="0.9229" />
-            <PreSize X="0.1000" Y="0.0854" />
+            <PreSize X="0.0975" Y="0.0958" />
+            <FontResource Type="Normal" Path="visualcontent/fonts/OpenSans-Regular.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

@@ -13,6 +13,9 @@
             <Image Name="el_logo.png" />
             <Image Name="el_splashscreen.png" />
           </Folder>
+          <Folder Name="fonts">
+            <TTF Name="OpenSans-Regular.ttf" />
+          </Folder>
           <Folder Name="levels">
             <Image Name="blue_bubble.png" />
             <Image Name="green_bubble.png" />

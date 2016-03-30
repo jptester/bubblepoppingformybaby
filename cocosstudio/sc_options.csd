@@ -82,14 +82,15 @@
             <FileData Type="Normal" Path="visualcontent/ui/sound_music.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="txt_credits_title" ActionTag="757020816" Tag="12" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="482.0000" RightMargin="152.0000" TopMargin="158.9920" BottomMargin="111.0080" FontSize="12" LabelText="Bubble Popping for my baby&#xA;&#xA;Game design&#xA;JPTester &amp; John Alan Kennedy&#xA;Development&#xA;JPTester&#xA;Art&#xA;Tokirokawa&#xA;Music&#xA;John Alan Kennedy&#xA;Sound effects&#xA;http://www.freesfx.co.uk&#xA;&#xA;Entretenimiento Lobo" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="166.0000" Y="210.0000" />
+          <AbstractNodeData Name="txt_credits_title" ActionTag="757020816" Tag="12" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="482.0000" RightMargin="151.0000" TopMargin="150.9760" BottomMargin="105.0240" FontSize="12" LabelText="Bubble Popping for my baby&#xA;&#xA;Game design&#xA;JPTester &amp; John Alan Kennedy&#xA;Development&#xA;JPTester&#xA;Art&#xA;Tokirokawa&#xA;Music&#xA;John Alan Kennedy&#xA;Sound effects&#xA;http://www.freesfx.co.uk&#xA;&#xA;Entretenimiento Lobo" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="167.0000" Y="224.0000" />
             <AnchorPoint />
-            <Position X="482.0000" Y="111.0080" />
+            <Position X="482.0000" Y="105.0240" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
-            <PrePosition X="0.6025" Y="0.2313" />
-            <PreSize X="0.2075" Y="0.4375" />
+            <PrePosition X="0.6025" Y="0.2188" />
+            <PreSize X="0.2087" Y="0.4667" />
+            <FontResource Type="Normal" Path="visualcontent/fonts/OpenSans-Regular.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
