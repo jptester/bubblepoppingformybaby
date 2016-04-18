@@ -32,6 +32,8 @@ el.bubble.BabyLaughs = [
 ];
 el.bubble.CurrentBabyLaugh = Math.round(el.bubble.BabyLaughs.length * Math.random()) % el.bubble.BabyLaughs.length;
 el.bubble.m_animalName = "animalInside";
+el.bubble.IncreasingTemp = cc.sys.DEBUG == 1 ? 0.05 : 0.2;
+el.bubble.DecreasingTemp = 0.04;
 
 //
 //  Bubble generator class
@@ -60,8 +62,8 @@ el.bubble.BubbleGenerator = el.Class.extend({
 		res.img_inBubble_unicorn
 	],
 	m_currentInsideAnimal : 0,
+	m_thermometer: null,
 
-	
 	// private properties
 	_bubbles: null,
 	_currentIndex: null,
@@ -91,6 +93,9 @@ el.bubble.BubbleGenerator = el.Class.extend({
 			if ( !this.m_counter ) {
 				el.gELLog("No counter UI element found in scene");
 			}
+			
+			// get thermometer
+			this.m_thermometer = scene.getThermometer();
 		}
 		
 		// Current animal
@@ -300,6 +305,13 @@ el.bubble.BubbleGenerator = el.Class.extend({
 								}
 							}
 						}
+						// if bubble just died
+						else {
+							// Increase temp
+							if ( this.m_thermometer ) {
+								this.m_thermometer.setPercent(this.m_thermometer.getPercent() - el.bubble.DecreasingTemp);
+							}
+						}
 
 						// Remove bubble
 						bubble.getSprite().getParent().removeChild(bubble.getSprite());						
@@ -340,6 +352,9 @@ el.bubble.BubbleGenerator = el.Class.extend({
 							// Limit has been reached - load interestial
 							el.Game.getInstance().playInMobiAd();
 						}
+						
+						// Increase temp
+						this.increaseTemp();
 					}
 					
 					// remove current bubble from main array
@@ -375,7 +390,40 @@ el.bubble.BubbleGenerator = el.Class.extend({
 	getBubblesPopped: function() {
 		return this.m_bubblesPopped;
 	},
+	
+	//
+	// Increases temp and if max level reached, then go to next level
+	//
+	increaseTemp: function() {
 		
+		// If ther is a thermometer
+		if ( this.m_thermometer ) {
+			
+			// Get value
+			var val = this.m_thermometer.getPercent() + el.bubble.IncreasingTemp;
+			
+			// if next level value has been reached
+			if ( val >= 1 ) {
+				
+				// Run any special effects
+				var scene = this.m_parentNode ? this.m_parentNode.getParent() : null;
+				if ( scene && scene instanceof cc.Scene ) {
+					this.m_counter = scene.m_counter;
+					if ( !this.m_counter ) {
+						el.gELLog("No counter UI element found in scene");
+					}
+					
+					// get thermometer
+					scene.levelUp();
+				}				
+			}
+			else {
+				// Set new percent
+				this.m_thermometer.setPercent(val);
+			}
+		}		
+	},
+			
 	// Create a new bubble
 	createBubble: function () {
 		

@@ -110,6 +110,7 @@ el.MainLevel = cc.Scene.extend({
 	// ui elements
 	m_counter: null,
 	m_optButton: null,
+	m_thermometer: null,
 		
 	//
 	// Constructor function for Scene
@@ -231,6 +232,12 @@ el.MainLevel = cc.Scene.extend({
 				this.setString(("000" + value).slice(-4));
 			}
 		}
+		
+		// Get Thermometer
+		var spriteThermometer = el.gFindFirstChildInInnerTreeByName(this, "thermometer_bg");
+		if ( spriteThermometer ) {
+			this.m_thermometer = new el.thermometer.Thermometer( el.thermometer.TYPE.VERTICAL_BOTTOM_UP, 0.0, spriteThermometer );
+		}
 	},
 	
 	//
@@ -321,6 +328,67 @@ el.MainLevel = cc.Scene.extend({
 			el.Audio.getInstance().playEffect(res.snd_baby_sound_sfx);
 		}
 	},
+	
+	//
+	// Returns pointer to thermometer
+	//
+	getThermometer: function() {
+		return this.m_thermometer;
+	},
+	
+	//
+	// Level up
+	//
+	levelUp: function() {
+		
+		// Set thermometer to 0
+		this.m_thermometer.setPercent(0);
+		
+		// Increase difficult
+		{
+			// Change generators
+			for ( bubbleGenerator in this.m_bubblesGenerators ) {
+				
+				// Change difficulty properties
+				var generatorModified = this.m_bubblesGenerators[bubbleGenerator];
+				
+				// Get current difficult properties
+				var freq = generatorModified.m_frequencyPerSecond;
+				var grav = generatorModified.m_gravity;
+				
+				// Calculate new values for freq and gravity (more difficult)
+				generatorModified.m_frequencyPerSecond = freq * .9 <= 0.6 ? 0.6 : freq * .9;
+				generatorModified.m_gravity = grav * 1.1 >= 12 ? 12 : grav * 1.1;
+
+				// if no changes then limit has been reached and set more difficult
+				// based on thermometer
+				if ( freq == generatorModified.m_frequencyPerSecond &&
+					 grav == generatorModified.m_gravity ) {
+						 
+						 // Get decreasing value for thermometer
+						 var dec = el.bubble.DecreasingTemp;
+						 el.bubble.DecreasingTemp = dec * 1.1 > 1 ? 1 : dec * 1.1;
+						 
+						 // if max value has been reached WOW
+						 if ( cc.sys.DEBUG == 1 && 1 == el.bubble.DecreasingTemp ) {
+							 el.gELLog("Difficult limit has been reached");
+						 }
+					 }
+/*
+				m_updateFrequency: null,
+				m_maxBubbles: null, 
+				m_gravity: null, 
+
+				1, // frequencyPerSecond
+				12,  // updateFrequency
+				5,  // maxBubbles
+				4,  // maxGravity 
+*/
+			}
+		}
+	},
+	
+
 	
 });
 

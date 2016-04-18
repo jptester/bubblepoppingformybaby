@@ -1,7 +1,7 @@
 {
     "project_type": "javascript",
 
-    "debugMode" : 0,
+    "debugMode" : 1,
     "showFPS" : false,
     "frameRate" : 60,
     "noCache" : false,
@@ -28,6 +28,7 @@
 		"src/el/engine/audio.js",        
 		
 		"src/el/bubblepoppinggameformybaby/bubbles.js",
+		"src/el/bubblepoppinggameformybaby/thermometer.js",
 		"src/el/bubblepoppinggameformybaby/scenes.js"
     ]
 }

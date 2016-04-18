@@ -29,7 +29,7 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 400.0,
+              "X": 398.0,
               "Y": 240.0
             },
             "Scale": {
@@ -41,13 +41,15 @@
             "PositionPercentXEnabled": true,
             "PositionPercentYEnabled": true,
             "PrePosition": {
-              "X": 0.5,
+              "X": 0.4975,
               "Y": 0.5
             },
             "PreSize": {
               "X": 1.0,
               "Y": 1.0
             },
+            "LeftMargin": -2.0,
+            "RightMargin": 2.0,
             "Tag": 13,
             "ActionTag": 673625189,
             "Size": {
@@ -173,7 +175,7 @@
             "Scale9Enable": true,
             "Scale9OriginX": 15,
             "Scale9OriginY": 11,
-            "Scale9Width": 37,
+            "Scale9Width": 21,
             "Scale9Height": 29,
             "OutlineColor": {
               "G": 0,
@@ -206,17 +208,17 @@
               "Y": 0.9354
             },
             "PreSize": {
-              "X": 0.0838,
+              "X": 0.0637,
               "Y": 0.1063
             },
-            "LeftMargin": 727.5,
-            "RightMargin": 5.5,
+            "LeftMargin": 735.5,
+            "RightMargin": 13.5,
             "TopMargin": 5.5,
             "BottomMargin": 423.5,
             "Tag": 7,
             "ActionTag": -1513825170,
             "Size": {
-              "X": 67.0,
+              "X": 51.0,
               "Y": 51.0
             },
             "Name": "btn_options",
@@ -278,6 +280,183 @@
             },
             "Name": "txt_counter",
             "ctype": "TextObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/levels/thermometer_0.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 61.0,
+              "Y": 246.5003
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0763,
+              "Y": 0.5135
+            },
+            "PreSize": {
+              "X": 0.0575,
+              "Y": 0.5562
+            },
+            "LeftMargin": 38.0,
+            "RightMargin": 716.0,
+            "TopMargin": 99.9997,
+            "BottomMargin": 113.0003,
+            "Tag": 17,
+            "ActionTag": -1265977626,
+            "Size": {
+              "X": 46.0,
+              "Y": 267.0
+            },
+            "Name": "thermometer_bg",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/levels/thermometer_1.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 61.0,
+              "Y": 197.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0763,
+              "Y": 0.4115
+            },
+            "PreSize": {
+              "X": 0.1575,
+              "Y": 0.8229
+            },
+            "LeftMargin": -2.0,
+            "RightMargin": 676.0,
+            "TopMargin": 85.0,
+            "Tag": 18,
+            "ActionTag": -684057827,
+            "Size": {
+              "X": 126.0,
+              "Y": 395.0
+            },
+            "Name": "thermometer_1_3",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/levels/thermometer_2.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 61.0,
+              "Y": 197.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0763,
+              "Y": 0.4115
+            },
+            "PreSize": {
+              "X": 0.1575,
+              "Y": 0.8229
+            },
+            "LeftMargin": -2.0,
+            "RightMargin": 676.0,
+            "TopMargin": 85.0,
+            "Tag": 19,
+            "ActionTag": -1803859590,
+            "Size": {
+              "X": 126.0,
+              "Y": 395.0
+            },
+            "Name": "thermometer_2_4",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "visualcontent/levels/thermometer_3.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 61.0,
+              "Y": 197.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0763,
+              "Y": 0.4115
+            },
+            "PreSize": {
+              "X": 0.1575,
+              "Y": 0.8229
+            },
+            "LeftMargin": -2.0,
+            "RightMargin": 676.0,
+            "TopMargin": 85.0,
+            "Tag": 20,
+            "ActionTag": -738981882,
+            "Size": {
+              "X": 126.0,
+              "Y": 395.0
+            },
+            "Name": "thermometer_3_5",
+            "ctype": "SpriteObjectData"
           }
         ],
         "Size": {
@@ -290,6 +469,10 @@
       "UsedResources": [
         "visualcontent/bg/bg01.jpg",
         "visualcontent/fonts/OpenSans-Regular.ttf",
+        "visualcontent/levels/thermometer_0.png",
+        "visualcontent/levels/thermometer_1.png",
+        "visualcontent/levels/thermometer_2.png",
+        "visualcontent/levels/thermometer_3.png",
         "visualcontent/ui/bubbles_icon.png",
         "visualcontent/ui/counter_icon.png",
         "visualcontent/ui/gear-dissabled.png",

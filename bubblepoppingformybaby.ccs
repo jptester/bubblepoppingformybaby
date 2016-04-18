@@ -24,6 +24,10 @@
             <Image Name="inBubble_rabbit.png" />
             <Image Name="inBubble_unicorn.png" />
             <Image Name="red_bubble.png" />
+            <Image Name="thermometer_0.png" />
+            <Image Name="thermometer_1.png" />
+            <Image Name="thermometer_2.png" />
+            <Image Name="thermometer_3.png" />
             <Image Name="yellow_bubble.png" />
           </Folder>
           <Folder Name="ui">
