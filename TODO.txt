@@ -1,6 +1,8 @@
 TO DO List:
 
 1. Clean code (it's messy and propmt to fail)
-2. Check avast - inmobi - sdkbox virus like behavior warning
-3. Change opt background, I don't think they fit anymore
-
+2. Change opt background, I don't think they fit anymore
+3. Level changing
+4. Difficult increases in time
+5. Thermometer for leveling up
+6. Another ad network (AdMob would be ideal)
