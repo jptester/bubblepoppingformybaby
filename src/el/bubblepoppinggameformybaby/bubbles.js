@@ -32,7 +32,7 @@ el.bubble.BabyLaughs = [
 ];
 el.bubble.CurrentBabyLaugh = Math.round(el.bubble.BabyLaughs.length * Math.random()) % el.bubble.BabyLaughs.length;
 el.bubble.m_animalName = "animalInside";
-el.bubble.IncreasingTemp = cc.sys.DEBUG == 1 ? 0.05 : 0.2;
+el.bubble.IncreasingTemp = cc.game.config.debugMode == 1 ? 0.2 : 0.05;
 el.bubble.DecreasingTemp = 0.04;
 
 //

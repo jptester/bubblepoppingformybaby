@@ -370,7 +370,7 @@ el.MainLevel = cc.Scene.extend({
 						 el.bubble.DecreasingTemp = dec * 1.1 > 1 ? 1 : dec * 1.1;
 						 
 						 // if max value has been reached WOW
-						 if ( cc.sys.DEBUG == 1 && 1 == el.bubble.DecreasingTemp ) {
+						 if ( cc.game.config.debugMode == 1 && 1 == el.bubble.DecreasingTemp ) {
 							 el.gELLog("Difficult limit has been reached");
 						 }
 					 }
