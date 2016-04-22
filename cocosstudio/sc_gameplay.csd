@@ -17,24 +17,24 @@
             <FileData Type="Normal" Path="visualcontent/bg/bg01.jpg" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="bubbles_icon_6" ActionTag="-638434999" Tag="15" IconVisible="False" LeftMargin="13.0000" RightMargin="687.0000" TopMargin="1.0000" BottomMargin="403.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="bubbles_icon_6" ActionTag="-638434999" Tag="15" IconVisible="False" LeftMargin="109.0000" RightMargin="591.0000" TopMargin="1.0000" BottomMargin="403.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="76.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="63.0000" Y="441.0000" />
+            <Position X="159.0000" Y="441.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0787" Y="0.9187" />
+            <PrePosition X="0.1988" Y="0.9187" />
             <PreSize X="0.1250" Y="0.1583" />
             <FileData Type="Normal" Path="visualcontent/ui/bubbles_icon.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="counter_icon_7" ActionTag="1881121760" Tag="16" IconVisible="False" LeftMargin="102.0000" RightMargin="598.0000" TopMargin="1.0000" BottomMargin="403.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="counter_icon_7" ActionTag="1881121760" Tag="16" IconVisible="False" LeftMargin="198.0000" RightMargin="502.0000" TopMargin="1.0000" BottomMargin="403.0000" ctype="SpriteObjectData">
             <Size X="100.0000" Y="76.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="152.0000" Y="441.0000" />
+            <Position X="248.0000" Y="441.0000" />
             <Scale ScaleX="1.0000" ScaleY="0.8158" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1900" Y="0.9187" />
+            <PrePosition X="0.3100" Y="0.9187" />
             <PreSize X="0.1250" Y="0.1583" />
             <FileData Type="Normal" Path="visualcontent/ui/counter_icon.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
@@ -54,13 +54,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="txt_counter" ActionTag="360222315" Tag="7" IconVisible="False" LeftMargin="112.0002" RightMargin="609.9998" TopMargin="14.0005" BottomMargin="419.9995" FontSize="34" LabelText="0000" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+          <AbstractNodeData Name="txt_counter" ActionTag="360222315" Tag="7" IconVisible="False" LeftMargin="208.0002" RightMargin="513.9998" TopMargin="13.5002" BottomMargin="420.4998" FontSize="34" LabelText="0000" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
             <Size X="78.0000" Y="46.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="151.0002" Y="442.9995" />
+            <Position X="247.0002" Y="443.4998" />
             <Scale ScaleX="0.9302" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1888" Y="0.9229" />
+            <PrePosition X="0.3088" Y="0.9240" />
             <PreSize X="0.0975" Y="0.0958" />
             <FontResource Type="Normal" Path="visualcontent/fonts/OpenSans-Regular.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
@@ -109,6 +109,39 @@
             <PreSize X="0.1575" Y="0.8229" />
             <FileData Type="Normal" Path="visualcontent/levels/thermometer_3.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="counter_icon_7_0" ActionTag="-239114395" Tag="12" IconVisible="False" LeftMargin="40.0002" RightMargin="659.9998" TopMargin="-1.9990" BottomMargin="405.9990" ctype="SpriteObjectData">
+            <Size X="100.0000" Y="76.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="90.0002" Y="443.9990" />
+            <Scale ScaleX="0.5000" ScaleY="0.8158" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.1125" Y="0.9250" />
+            <PreSize X="0.1250" Y="0.1583" />
+            <FileData Type="Normal" Path="visualcontent/ui/counter_icon.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_1" ActionTag="634050028" Tag="15" IconVisible="False" LeftMargin="12.0000" RightMargin="746.0000" TopMargin="17.0002" BottomMargin="423.9998" FontSize="34" LabelText="Lv." ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+            <Size X="42.0000" Y="39.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="33.0000" Y="443.4998" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.0413" Y="0.9240" />
+            <PreSize X="0.0525" Y="0.0812" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="txt_level" ActionTag="41617732" Tag="16" IconVisible="False" LeftMargin="71.7999" RightMargin="690.2001" TopMargin="17.0002" BottomMargin="423.9998" FontSize="34" LabelText="00" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+            <Size X="38.0000" Y="39.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="90.7999" Y="443.4998" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.1135" Y="0.9240" />
+            <PreSize X="0.0475" Y="0.0812" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

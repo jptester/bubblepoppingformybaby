@@ -32,7 +32,8 @@ var res = {
 	// particles
 	emmit_bubble_explotion_particle : "res/visualcontent/particles/popping_bubble_particle.plist",
 	emmit_bubble_fireworks_particle : "res/visualcontent/particles/fireworks_particles.plist",
-	emmit_bubble_starsrain_particle : "res/visualcontent/particles/stars_particles.plist",	
+	emmit_bubble_starsrain_particle : "res/visualcontent/particles/stars_particles.plist",
+	emmit_bubble_baloon_particle	: "res/visualcontent/particles/baloons_particle.plist",
 	
 	
 };

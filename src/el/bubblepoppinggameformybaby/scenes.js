@@ -108,6 +108,7 @@ el.MainLevel = cc.Scene.extend({
 	_layer: null,
 	
 	// ui elements
+	m_level: null,
 	m_counter: null,
 	m_optButton: null,
 	m_thermometer: null,
@@ -220,6 +221,20 @@ el.MainLevel = cc.Scene.extend({
 		this.m_optButton = el.gFindFirstChildInInnerTreeByName(this, "btn_options");
 		if ( this.m_optButton && this.m_optButton instanceof ccui.Button ) {
 			this.m_optButton.addTouchEventListener(this.optionsPopup, this);
+		}
+		
+		// Get the level counter
+		this.m_level = el.gFindFirstChildInInnerTreeByName(this, "txt_level");
+		if ( this.m_level ) {
+			this.m_level.getCounterValue = function() {
+				return parseInt( this.getString(), 10 );
+			}
+			this.m_level.setCounterValue = function(value) {
+				this.setString(("0" + value).slice(-2));
+			}
+			
+			// set level to 1
+			this.m_level.setCounterValue(1);
 		}
 		
 		// Get the counter
@@ -346,6 +361,13 @@ el.MainLevel = cc.Scene.extend({
 		
 		// Increase difficult
 		{
+			
+			// current level
+			var nextLevel = ( this.m_level.getCounterValue() + 1 ) % 100;
+			
+			// increase level
+			this.m_level.setCounterValue(nextLevel);
+			
 			// Change generators
 			for ( bubbleGenerator in this.m_bubblesGenerators ) {
 				
@@ -371,19 +393,27 @@ el.MainLevel = cc.Scene.extend({
 						 
 						 // if max value has been reached WOW
 						 if ( cc.game.config.debugMode == 1 && 1 == el.bubble.DecreasingTemp ) {
-							 el.gELLog("Difficult limit has been reached");
+							 el.gELLog("Difficult limit has been reached. Lv. " + this.m_level.getCounterValue());
 						 }
 					 }
-/*
-				m_updateFrequency: null,
-				m_maxBubbles: null, 
-				m_gravity: null, 
+					 
+				
+				// Difficulty parameters
+				// m_updateFrequency: null,
+				// m_maxBubbles: null, 
+				// m_gravity: null, 
+				// 1, // frequencyPerSecond
+				// 12,  // updateFrequency
+				// 5,  // maxBubbles
+				//4,  // maxGravity
 
-				1, // frequencyPerSecond
-				12,  // updateFrequency
-				5,  // maxBubbles
-				4,  // maxGravity 
-*/
+				// Play particles as reward
+				var particleEmmiter = new cc.ParticleSystem(res.emmit_bubble_baloon_particle);
+				particleEmmiter.setPosition(cc.p(400,150));
+				particleEmmiter.setAutoRemoveOnFinish(true);
+				this._layer.addChild(particleEmmiter);
+
+
 			}
 		}
 	},
