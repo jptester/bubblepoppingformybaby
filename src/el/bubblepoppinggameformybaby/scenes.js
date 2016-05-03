@@ -454,6 +454,11 @@ el.optionsPopUpScene = cc.Scene.extend({
 		// if ad hasn't been shown
 		if ( !el.bubble.playedOnce ) {
 			
+			// if debug log that Ad will be shown
+			if ( cc.game.config.debugMode == 1 ) {
+				el.gELLog("inmobi: admob: trying to play ad");
+			}
+			
 			// first, do not show ads again
 			el.bubble.playedOnce = true;
 			
@@ -461,7 +466,7 @@ el.optionsPopUpScene = cc.Scene.extend({
 			el.bubble.MousePosition = null;
 			
 			// second, show interestitial
-			el.Game.getInstance().playInMobiAd();
+			el.Game.getInstance().playAds();
 		}
 		
 	},
@@ -558,7 +563,9 @@ el.optionsPopUpScene = cc.Scene.extend({
 			// If native app
 			if (cc.sys.isNative)
 			{
-				if ( el.bubble.bool_ImplementAds && cc.sys.OS_ANDROID == cc.sys.os && el.Game.getInstance().isInMobiInterestitialReady() ) {
+				if ( el.bubble.bool_ImplementAds && cc.sys.OS_ANDROID == cc.sys.os && el.Game.getInstance().isAnyInterestitialReady() ) {
+					
+					// Change adDismissed function so once dismissed the ad the game will quit
 					el.Game.adDismissed = function() {
 						cc.director.end();
 					}
@@ -566,7 +573,7 @@ el.optionsPopUpScene = cc.Scene.extend({
 					el.bubble.MousePosition = null;
 					
 					// Show ad
-					el.Game.getInstance().playInMobiAd();
+					el.Game.getInstance().playAds();
 				}
 				else {
 					cc.director.end();

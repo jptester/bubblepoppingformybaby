@@ -1,0 +1,72 @@
+{
+    "android": {
+        "AdMob": {
+            "test": true, 
+            "ads": {
+                "gameover": {
+                    "type": "interstitial", 
+                    "id": "ca-app-pub-1329374026572143/1092476511"
+                }, 
+                "home": {
+                    "width": 300, 
+                    "type": "banner", 
+                    "id": "ca-app-pub-1329374026572143/2685130917", 
+                    "alignment": "bottom", 
+                    "height": 50
+                }
+            }
+        }, 
+        "InMobi": {
+            "version": 1, 
+            "account_id": "c32565986d434164a09d8e3872c6a074", 
+            "ads": {
+                "ad2": {
+                    "type": "interstitial", 
+                    "id": "1449919424310"
+                }, 
+                "ad1": {
+                    "width": 300, 
+                    "type": "interstitial", 
+                    "id": "1458632151985", 
+                    "alignment": "top", 
+                    "height": 50
+                }
+            }
+        }
+    }, 
+    "ios": {
+        "AdMob": {
+            "test": true, 
+            "ads": {
+                "gameover": {
+                    "type": "interstitial", 
+                    "id": "ca-app-pub-1329374026572143/4185543717"
+                }, 
+                "home": {
+                    "width": 300, 
+                    "type": "banner", 
+                    "id": "ca-app-pub-1329374026572143/3847466511", 
+                    "alignment": "bottom", 
+                    "height": 50
+                }
+            }
+        }, 
+        "InMobi": {
+            "version": 1, 
+            "account_id": "922cc696d9fa475097651b5cad78567d", 
+            "ads": {
+                "ad2": {
+                    "type": "interstitial", 
+                    "id": "1446442489192"
+                }, 
+                "ad1": {
+                    "width": 300, 
+                    "type": "banner", 
+                    "id": "1449005666241", 
+                    "alignment": "bottom", 
+                    "height": 50
+                }
+            }
+        }
+    }
+}

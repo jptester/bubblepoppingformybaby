@@ -9,16 +9,19 @@ LOCAL_MODULE_FILENAME := libcocos2djs
 
 LOCAL_SRC_FILES := hellojavascript/main.cpp \
 ../../../Classes/AppDelegate.cpp \
+../../../Classes/PluginAdMobJS.cpp \
+../../../Classes/PluginAdMobJSHelper.cpp \
+../../../Classes/SDKBoxJSHelper.cpp \
 ../../../Classes/PluginInMobiJS.cpp \
-../../../Classes/PluginInMobiJSHelper.cpp \
-../../../Classes/SDKBoxJSHelper.cpp
+../../../Classes/PluginInMobiJSHelper.cpp
 
 LOCAL_CPPFLAGS := -DSDKBOX_ENABLED
 LOCAL_LDLIBS := -landroid \
 -llog
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
-LOCAL_WHOLE_STATIC_LIBRARIES := PluginInMobi \
-sdkbox
+LOCAL_WHOLE_STATIC_LIBRARIES := PluginAdMob \
+sdkbox \
+PluginInMobi
 
 LOCAL_STATIC_LIBRARIES := cocos2d_js_static
 
@@ -31,4 +34,5 @@ $(call import-add-path,$(LOCAL_PATH))
 
 $(call import-module, scripting/js-bindings/proj.android)
 $(call import-module, ./sdkbox)
+$(call import-module, ./pluginadmob)
 $(call import-module, ./plugininmobi)

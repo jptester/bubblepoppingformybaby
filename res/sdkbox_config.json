@@ -1,13 +1,20 @@
-
 {
     "android": {
         "InMobi":{
             "account_id":"c32565986d434164a09d8e3872c6a074",
             "version":1,
             "ads":{
-                "ad1":{
+                "Bubble Popping For My Baby Interestitial":{
                     "type": "interstitial", 
                     "id": "1458632151985"
+                }
+            }
+        },
+        "AdMob":{
+            "ads":{
+                "BannerGeneral":{
+                    "id":"ca-app-pub-4772522414779724/7836900691",
+                    "type":"interstitial"
                 }
             }
         }

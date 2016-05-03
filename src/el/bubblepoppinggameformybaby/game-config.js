@@ -27,7 +27,6 @@ el.bubble.str_LocalizationFileTailName = "_localization.plist";
 el.bubble.bool_ImplementAds = true;
 el.bubble.bool_AdsMaxNumberOfAttempsToLoad = 3;
 
-
 // Sounds settings
 el.bubble.fSoundFXVolume = 0.5;
 el.bubble.fMusicVolume = 1;
@@ -38,3 +37,6 @@ el.bubble.LEVEL_TYPES = el.bubble.LEVEL_TYPES || {
 	STRATEGY: 1,
 	CASUAL: 2
 };
+
+// AdMob ads
+el.bubble.AdMobAdName = "BannerGeneral";

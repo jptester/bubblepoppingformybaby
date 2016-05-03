@@ -23,8 +23,8 @@
 # ****************************************************************************/
 
 cmake_minimum_required(VERSION 2.8)
-set(APP_NAME BubblePoppingGameForMyBaby)
 
+set(APP_NAME BubblePoppingForMyBaby)
 project (${APP_NAME})
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/frameworks/cocos2d-x/cmake/Modules/")

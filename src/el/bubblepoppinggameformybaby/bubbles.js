@@ -23,7 +23,7 @@ el.bubble.BubblesSFXStep = 6;
 el.bubble.BubblesPoppedMultipleHit = 2;
 el.bubble.FirstBubblesBonusReached = 13;
 el.bubble.SecondBubblesBonusReached = 21;
-el.bubble.ShowAddBubblesPoppedCounter = 99;
+el.bubble.ShowAddBubblesPoppedCounter = 50;
 el.bubble.BabyLaughs = [
 	res.snd_baby_laughs0_sfx,
 	res.snd_baby_laughs1_sfx,
@@ -350,7 +350,7 @@ el.bubble.BubbleGenerator = el.Class.extend({
 							el.bubble.MousePosition = null;
 								 
 							// Limit has been reached - load interestial
-							el.Game.getInstance().playInMobiAd();
+							el.Game.getInstance().playAds();
 						}
 						
 						// Increase temp

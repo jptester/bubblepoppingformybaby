@@ -22,8 +22,11 @@ el.Game = (function () {
 	// Private object / singleton instance
 	var _game;
 	
-	// InMobi plugin value
+	// InMobi plugin property
 	var _m_inMobiPlugIn;
+	
+	// AdMob plug in property
+	var _m_adMobPlugIn;
 		
 	// Private creation instance function 
     function createInstance() {
@@ -60,33 +63,40 @@ el.Game = (function () {
 		// Initialize plugins
 		game.initPlugIns = _initPlugIns;
 		
-		// Load Interestial
-		game.loadInMobiInterestitial = function () {
-			// If there is a valid inMobi plugin
-			if ( _m_inMobiPlugIn ) {
-				sdkbox.PluginInMobi.loadInterstitial();
-			}
-		};
+		// Load Interestitials
+		game.loadInterestitials = _loadInterestitials;
 		
-		// Returns true if interestitial is ready
-		game.isInMobiInterestitialReady = function() {
-			return cc.sys.OS_ANDROID == cc.sys.os && el.bubble.bool_ImplementAds ? sdkbox.PluginInMobi.isInterstitialReady() : false;
+		// Returns true if there is an interestitial ready
+		game.isAnyInterestitialReady = function() {
+			
+			if ( cc.sys.OS_ANDROID == cc.sys.os && el.bubble.bool_ImplementAds ) {
+				
+				if ( _m_inMobiPlugIn && sdkbox.PluginInMobi.isInterstitialReady() )
+					return true;
+				
+				if ( _m_adMobPlugIn && sdkbox.PluginAdMob.isAvailable(el.bubble.AdMobAdName) )
+					return true;
+			}
+			
+			return false;
 		}
 		
-		// Once ready show ads
-		game.playInMobiAd = function() {
-			
-			// if android and 
+		// Play ads
+		game.playAds = function() {
+			// depending on the priority of ads and availability show the next ad
 			if ( cc.sys.OS_ANDROID == cc.sys.os && el.bubble.bool_ImplementAds ) {
-				// show interstitial
-				if ( sdkbox.PluginInMobi.isInterstitialReady() ) {
-					sdkbox.PluginInMobi.showInterstitial();
-				} else {
-					cc.log('inmobi interstitial ad is not ready');
-				}				
+				// if InMob Ad ready play it
+				if ( _m_inMobiPlugIn && sdkbox.PluginInMobi.isInterstitialReady() ) {
+					_playInMobiAd();
+				}
+				else {
+					if ( _m_adMobPlugIn && sdkbox.PluginAdMob.isAvailable(el.bubble.AdMobAdName) ) {
+						_playAdMobAd();
+					}
+				}
 			}			
-		};
-				
+		}
+		
 		// return new object
         return game;
     };
@@ -95,14 +105,76 @@ el.Game = (function () {
 	function _initPlugIns() {
 		
 		// Init inMobi
-		initInMobiPlugIn();		
+		_initInMobiPlugIn();	
+
+		// Init AdMob
+		_initAdMobPlugIn();
+		
+		// Load interestitials
+		_loadInterestitials();
+		
+	};
+
+	// Load inMobi Interestial
+	function _loadInMobiInterestitial() {
+		// If there is a valid inMobi plugin
+		if ( _m_inMobiPlugIn ) {
+			var result = sdkbox.PluginInMobi.loadInterstitial();
+			el.gELLog("inmobi: Loading inMobi Interestitial... " + (result ? result : "NO INFO"));
+		}
+	};
+		
+	// Load adMob Interestial
+	function _loadAdMobInterestitial() {
+		// If there is a valid adMob plugin
+		if ( _m_adMobPlugIn ) {				
+			// Cache current banner
+			var result = sdkbox.PluginAdMob.cache(el.bubble.AdMobAdName);
+			el.gELLog("adMob: Loading adMob Interestitial... " + (result ? result : "NO INFO"));
+		}
+	};
+	
+	// Load Interestitials
+	function _loadInterestitials() {			
+		// Load inMobi ads
+		_loadInMobiInterestitial();
+		
+		// Load AdMob ads
+		_loadAdMobInterestitial();
+	}
+		
+	// Once ready show ads
+	function _playInMobiAd() {
+		
+		// show interstitial
+		if ( _m_inMobiPlugIn && sdkbox.PluginInMobi.isInterstitialReady() ) {
+			sdkbox.PluginInMobi.showInterstitial();
+		} else {
+			cc.log('inmobi interstitial ad is not ready');
+		}				
+	};
+			
+	// Once ready show ads
+	function _playAdMobAd() {
+		
+		// show interstitial
+		if ( _m_adMobPlugIn && sdkbox.PluginAdMob.isAvailable(el.bubble.AdMobAdName) ) {
+			sdkbox.PluginAdMob.show(el.bubble.AdMobAdName);
+		} else {
+			cc.log('adMob: admob interstitial ad is not ready');
+		}				
 	};
 	
 	// InMobi PlugIn initializer
-	function initInMobiPlugIn() {
+	function _initInMobiPlugIn() {
 
 		// Init inMobi plug-in
 		var inMobiPlugin = sdkbox.PluginInMobi;
+		
+		if ( !inMobiPlugin ) {
+			el.gELLog("inmobi: No valid inMobi plugin");
+			return;
+		}
 		/*
 		inMobiPlugin.setListener({
 			bannerDidFinishLoading: function() { console.log('inmobi: bannerDidFinishLoading'); },
@@ -131,8 +203,8 @@ el.Game = (function () {
 			interstitialDidFinishLoading: function() { console.log('inmobi: interstitialDidFinishLoading'); },
 			interstitialDidFailToLoadWithError: function(code, description) {
 				console.log('inmobi: interstitialDidFailToLoadWithError code:' + code + ' desc:' + description); 
-				if ( el.bubble.bool_AdsMaxNumberOfAttempsToLoad-- >= 0 ) { 
-					el.Game.getInstance().loadInMobiInterestitial(); 
+				if ( el.bubble.bool_AdsMaxNumberOfAttempsToLoad-- >= 0 ) {
+					el.Game.getInstance().loadInterestitials();
 				}
 			},
 			interstitialWillPresent: function() { console.log('inmobi: interstitialWillPresent'); },
@@ -153,17 +225,50 @@ el.Game = (function () {
 		
 		// Init plugin
 		if( !_m_inMobiPlugIn ) {
-			el.gELlog("No inMobi plug-in available. No initialize was possible");
+			el.gELLog("No inMobi plug-in available. No initialize was possible");
 			return;
 		}
 			
 		// Set log max level
-		// Uncomment only for debug purposes
-		//inMobiPlugin.setLogLevel(inMobiPlugin.SBIMSDKLogLevel.kIMSDKLogLevelDebug);
+		if ( cc.game.config.debugMode == 1 ) {
+			inMobiPlugin.setLogLevel(inMobiPlugin.SBIMSDKLogLevel.kIMSDKLogLevelDebug);
+		}
 		
 		// No hardware-acceleration
 		// Uncomment only for debug purposes
 		//inMobiPlugin.disableHardwareAccelerationForInterstitial();		
+	};
+
+	// Init AdMob plugin
+	function _initAdMobPlugIn() {
+
+		// Plug in variable
+		var adMobPlugin = sdkbox.PluginAdMob;
+		
+		// if valid plugin 
+		if ( adMobPlugin ) {
+			
+			// Set call back methods
+			adMobPlugin.setListener({
+				adViewDidReceiveAd : function(name) { console.log("adMob: AdMob ad successfuly loaded"); },
+				adViewDidFailToReceiveAdWithError : function(name, msg) { el.gELLog("adMob: Failed to show ad from AdMob: " + name + " with error: " + msg); },
+				adViewWillPresentScreen : function(name) { },
+				adViewDidDismissScreen : function(name) { },
+				//adViewWillDismissScreen : function(name) { },
+				//adViewWillLeaveApplication : function(name) { }
+			});
+			
+			// Init adMob plugin
+			_m_adMobPlugIn = adMobPlugin.init();
+			
+			if ( !_m_adMobPlugIn ) {
+				el.gELLog("adMob: No valid AdMob plugin");
+				return;
+			}
+		}
+		else {
+			el.gELLog("admob: No valid admob plugin");			
+		}
 	};
 		
 	// Public methods
@@ -174,14 +279,15 @@ el.Game = (function () {
             if (_game === undefined) {
                 _game = createInstance();
 				_m_inMobiPlugIn = false;
+				_m_adMobPlugIn = false;
             }
             return _game;
         },
 		
 		// Once ad has been dismissed
 		adDismissed: function() {
-			// if killing the app
-			el.Game.getInstance().loadInMobiInterestitial();
+			// Load new ads
+			_game.loadInterestitials();
 		},		
 		
 		removeCommand: "remove",

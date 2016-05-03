@@ -1,6 +1,5 @@
 #include "PluginInMobiJS.hpp"
 #include "cocos2d_specifics.hpp"
-//#include "PluginInMobi/PluginInMobi.h"
 #include "plugininmobi/PluginInMobi.h"
 #include "SDKBoxJSHelper.h"
 #include "sdkbox/Sdkbox.h"

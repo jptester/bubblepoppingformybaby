@@ -44,6 +44,8 @@
 #endif
 
 #ifdef SDKBOX_ENABLED
+#include "PluginAdMobJS.hpp"
+#include "PluginAdMobJSHelper.h"
 #include "PluginInMobiJS.hpp"
 #include "PluginInMobiJSHelper.h"
 #endif
@@ -73,9 +75,9 @@ bool AppDelegate::applicationDidFinishLaunching()
     auto glview = director->getOpenGLView();
     if(!glview) {
 #if(CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
-        glview = cocos2d::GLViewImpl::create("BubblePopForMyBaby");
+        glview = cocos2d::GLViewImpl::create("bubblepoppingformybaby");
 #else
-        glview = cocos2d::GLViewImpl::createWithRect("BubblePopForMyBaby", Rect(0,0,960,640));
+        glview = cocos2d::GLViewImpl::createWithRect("bubblepoppingformybaby", Rect(0,0,960,640));
 #endif
         director->setOpenGLView(glview);
 }
@@ -157,6 +159,8 @@ bool AppDelegate::applicationDidFinishLaunching()
 #ifdef SDKBOX_ENABLED
     sc->addRegisterCallback(register_all_PluginInMobiJS);
     sc->addRegisterCallback(register_all_PluginInMobiJS_helper);
+    sc->addRegisterCallback(register_all_PluginAdMobJS);
+    sc->addRegisterCallback(register_all_PluginAdMobJS_helper);
 #endif
     sc->start();    
     sc->runScript("script/jsb_boot.js");
