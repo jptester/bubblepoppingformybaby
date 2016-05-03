@@ -150,7 +150,7 @@ el.Game = (function () {
 		if ( _m_inMobiPlugIn && sdkbox.PluginInMobi.isInterstitialReady() ) {
 			sdkbox.PluginInMobi.showInterstitial();
 		} else {
-			cc.log('inmobi interstitial ad is not ready');
+			cc.log('inmobi: interstitial ad is not ready');
 		}				
 	};
 			

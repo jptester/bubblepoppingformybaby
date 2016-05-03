@@ -454,11 +454,6 @@ el.optionsPopUpScene = cc.Scene.extend({
 		// if ad hasn't been shown
 		if ( !el.bubble.playedOnce ) {
 			
-			// if debug log that Ad will be shown
-			if ( cc.game.config.debugMode == 1 ) {
-				el.gELLog("inmobi: admob: trying to play ad");
-			}
-			
 			// first, do not show ads again
 			el.bubble.playedOnce = true;
 			
