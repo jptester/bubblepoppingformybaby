@@ -54,7 +54,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="txt_counter" ActionTag="360222315" Tag="7" IconVisible="False" LeftMargin="208.0002" RightMargin="513.9998" TopMargin="13.5002" BottomMargin="420.4998" FontSize="34" LabelText="0000" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+          <AbstractNodeData Name="txt_counter" ActionTag="360222315" Tag="7" IconVisible="False" LeftMargin="208.0002" RightMargin="513.9998" TopMargin="13.5002" BottomMargin="420.4998" IsCustomSize="True" FontSize="34" LabelText="0000" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
             <Size X="78.0000" Y="46.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="247.0002" Y="443.4998" />
@@ -66,14 +66,14 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="thermometer_bg" ActionTag="-1265977626" Tag="17" IconVisible="False" LeftMargin="38.0000" RightMargin="716.0000" TopMargin="99.9997" BottomMargin="113.0003" ctype="SpriteObjectData">
-            <Size X="46.0000" Y="267.0000" />
+          <AbstractNodeData Name="thermometer_bg" ActionTag="-1265977626" Tag="17" IconVisible="False" LeftMargin="15.0000" RightMargin="693.0000" TopMargin="103.0000" BottomMargin="17.0000" ctype="SpriteObjectData">
+            <Size X="92.0000" Y="360.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="61.0000" Y="246.5003" />
+            <Position X="61.0000" Y="197.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0763" Y="0.5135" />
-            <PreSize X="0.0575" Y="0.5562" />
+            <PrePosition X="0.0763" Y="0.4104" />
+            <PreSize X="0.1150" Y="0.7500" />
             <FileData Type="Normal" Path="visualcontent/levels/thermometer_0.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
@@ -88,7 +88,7 @@
             <FileData Type="Normal" Path="visualcontent/levels/thermometer_1.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="thermometer_2_4" ActionTag="-1803859590" Tag="19" IconVisible="False" LeftMargin="-2.0000" RightMargin="676.0000" TopMargin="85.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="thermometer_face_1" ActionTag="-1803859590" Tag="19" IconVisible="False" LeftMargin="-2.0000" RightMargin="676.0000" TopMargin="85.0000" ctype="SpriteObjectData">
             <Size X="126.0000" Y="395.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="61.0000" Y="197.5000" />
@@ -99,7 +99,7 @@
             <FileData Type="Normal" Path="visualcontent/levels/thermometer_2.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="thermometer_3_5" ActionTag="-738981882" Tag="20" IconVisible="False" LeftMargin="-2.0000" RightMargin="676.0000" TopMargin="85.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="thermometer_face_2" ActionTag="-738981882" Tag="20" IconVisible="False" LeftMargin="-2.0000" RightMargin="676.0000" TopMargin="85.0000" ctype="SpriteObjectData">
             <Size X="126.0000" Y="395.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="61.0000" Y="197.5000" />
@@ -114,7 +114,7 @@
             <Size X="100.0000" Y="76.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="90.0002" Y="443.9990" />
-            <Scale ScaleX="0.5000" ScaleY="0.8158" />
+            <Scale ScaleX="0.5746" ScaleY="0.8158" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1125" Y="0.9250" />
             <PreSize X="0.1250" Y="0.1583" />
@@ -132,14 +132,15 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="txt_level" ActionTag="41617732" Tag="16" IconVisible="False" LeftMargin="71.7999" RightMargin="690.2001" TopMargin="17.0002" BottomMargin="423.9998" FontSize="34" LabelText="00" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
-            <Size X="38.0000" Y="39.0000" />
+          <AbstractNodeData Name="txt_level" ActionTag="41617732" Tag="16" IconVisible="False" LeftMargin="64.7998" RightMargin="691.2002" TopMargin="12.0002" BottomMargin="418.9998" IsCustomSize="True" FontSize="34" LabelText="00" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+            <Size X="44.0000" Y="49.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="90.7999" Y="443.4998" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Position X="86.7998" Y="443.4998" />
+            <Scale ScaleX="1.1472" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1135" Y="0.9240" />
-            <PreSize X="0.0475" Y="0.0812" />
+            <PrePosition X="0.1085" Y="0.9240" />
+            <PreSize X="0.0550" Y="0.1021" />
+            <FontResource Type="Normal" Path="visualcontent/fonts/OpenSans-Regular.ttf" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
