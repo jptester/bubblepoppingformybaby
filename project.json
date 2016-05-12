@@ -26,9 +26,10 @@
 		"src/el/engine/persistence.js",
 		"src/el/engine/utilities.js",        
 		"src/el/engine/audio.js",        
+		"src/el/engine/thermometer.js",
 		
 		"src/el/bubblepoppinggameformybaby/bubbles.js",
-		"src/el/bubblepoppinggameformybaby/thermometer.js",
-		"src/el/bubblepoppinggameformybaby/scenes.js"
+		"src/el/bubblepoppinggameformybaby/scenes.js",
+		"src/el/bubblepoppinggameformybaby/facethermometer.js"
     ]
 }

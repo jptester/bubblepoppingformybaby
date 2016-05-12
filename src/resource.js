@@ -34,8 +34,7 @@ var res = {
 	emmit_bubble_fireworks_particle : "res/visualcontent/particles/fireworks_particles.plist",
 	emmit_bubble_starsrain_particle : "res/visualcontent/particles/stars_particles.plist",
 	emmit_bubble_baloon_particle	: "res/visualcontent/particles/baloons_particle.plist",
-	
-	
+	emmit_bubble_lvlup_particle	: "res/visualcontent/particles/level_up_counter_particles.plist",	
 };
 
 var g_resources = [];

@@ -251,7 +251,21 @@ el.MainLevel = cc.Scene.extend({
 		// Get Thermometer
 		var spriteThermometer = el.gFindFirstChildInInnerTreeByName(this, "thermometer_bg");
 		if ( spriteThermometer ) {
-			this.m_thermometer = new el.thermometer.Thermometer( el.thermometer.TYPE.VERTICAL_BOTTOM_UP, 0.0, spriteThermometer );
+			
+			// get faces
+			var face1 = el.gFindFirstChildInInnerTreeByName(this, "thermometer_face_1");
+			var face2 = el.gFindFirstChildInInnerTreeByName(this, "thermometer_face_2");
+			
+			// if face 1 or face 2 not available throw exception
+			if ( !face1 || !face2 ) {
+				throw new Error("No valid faces for thermometer");
+			}
+			
+			// Set up thermometer - Make sure they are invisible
+			face1.setVisible(false);
+			face2.setVisible(false);
+			
+			this.m_thermometer = new el.bubble.FaceThermometer( el.thermometer.TYPE.VERTICAL_BOTTOM_UP, 0.0, spriteThermometer, [face1, face2] );
 		}
 	},
 	
@@ -412,8 +426,14 @@ el.MainLevel = cc.Scene.extend({
 				particleEmmiter.setPosition(cc.p(400,150));
 				particleEmmiter.setAutoRemoveOnFinish(true);
 				this._layer.addChild(particleEmmiter);
-
-
+				
+				// Play particles for level up counter
+				var lvlUpParticleEmmiter = new cc.ParticleSystem(res.emmit_bubble_lvlup_particle);
+				var currentPositionLvlCounter = this.m_level.getPosition();
+				currentPositionLvlCounter.y -= 70; 
+				lvlUpParticleEmmiter.setPosition(currentPositionLvlCounter);
+				lvlUpParticleEmmiter.setAutoRemoveOnFinish(true);
+				this._layer.addChild(lvlUpParticleEmmiter);
 			}
 		}
 	},
