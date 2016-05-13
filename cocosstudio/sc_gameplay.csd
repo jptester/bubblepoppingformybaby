@@ -66,46 +66,46 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="thermometer_bg" ActionTag="-1265977626" Tag="17" IconVisible="False" LeftMargin="38.2596" RightMargin="709.7404" TopMargin="127.9794" BottomMargin="168.0206" ctype="SpriteObjectData">
+          <AbstractNodeData Name="thermometer_bg" ActionTag="-1265977626" Tag="17" IconVisible="False" LeftMargin="63.2596" RightMargin="684.7404" TopMargin="88.9794" BottomMargin="207.0206" ctype="SpriteObjectData">
             <Size X="52.0000" Y="184.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="64.2596" Y="260.0206" />
+            <Position X="89.2596" Y="299.0206" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0803" Y="0.5417" />
+            <PrePosition X="0.1116" Y="0.6230" />
             <PreSize X="0.0650" Y="0.3833" />
             <FileData Type="Normal" Path="visualcontent/levels/thermometer_0.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="thermometer_1_3" ActionTag="-684057827" Tag="18" IconVisible="False" LeftMargin="32.7597" RightMargin="704.2402" TopMargin="120.4792" BottomMargin="161.5208" ctype="SpriteObjectData">
+          <AbstractNodeData Name="thermometer_1_3" ActionTag="-684057827" Tag="18" IconVisible="False" LeftMargin="57.7597" RightMargin="679.2403" TopMargin="81.4792" BottomMargin="200.5208" ctype="SpriteObjectData">
             <Size X="63.0000" Y="198.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="64.2597" Y="260.5208" />
+            <Position X="89.2597" Y="299.5208" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0803" Y="0.5428" />
+            <PrePosition X="0.1116" Y="0.6240" />
             <PreSize X="0.0787" Y="0.4125" />
             <FileData Type="Normal" Path="visualcontent/levels/thermometer_1.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="thermometer_face_1" ActionTag="-1803859590" Tag="19" IconVisible="False" LeftMargin="32.7597" RightMargin="704.2402" TopMargin="120.4792" BottomMargin="161.5208" ctype="SpriteObjectData">
+          <AbstractNodeData Name="thermometer_face_1" ActionTag="-1803859590" Tag="19" IconVisible="False" LeftMargin="57.7597" RightMargin="679.2403" TopMargin="81.4792" BottomMargin="200.5208" ctype="SpriteObjectData">
             <Size X="63.0000" Y="198.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="64.2597" Y="260.5208" />
+            <Position X="89.2597" Y="299.5208" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0803" Y="0.5428" />
+            <PrePosition X="0.1116" Y="0.6240" />
             <PreSize X="0.0787" Y="0.4125" />
             <FileData Type="Normal" Path="visualcontent/levels/thermometer_2.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="thermometer_face_2" ActionTag="-738981882" Tag="20" IconVisible="False" LeftMargin="32.7597" RightMargin="704.2402" TopMargin="120.4792" BottomMargin="161.5208" ctype="SpriteObjectData">
+          <AbstractNodeData Name="thermometer_face_2" ActionTag="-738981882" Tag="20" IconVisible="False" LeftMargin="57.7597" RightMargin="679.2403" TopMargin="81.4792" BottomMargin="200.5208" ctype="SpriteObjectData">
             <Size X="63.0000" Y="198.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="64.2597" Y="260.5208" />
+            <Position X="89.2597" Y="299.5208" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0803" Y="0.5428" />
+            <PrePosition X="0.1116" Y="0.6240" />
             <PreSize X="0.0787" Y="0.4125" />
             <FileData Type="Normal" Path="visualcontent/levels/thermometer_3.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
