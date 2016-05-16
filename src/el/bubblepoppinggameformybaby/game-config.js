@@ -24,8 +24,11 @@ el.bubble = el.bubble || {};
 el.bubble.str_DefaultLanguage = "es";
 el.bubble.str_LocalizationPathFileName = "res/langs/";
 el.bubble.str_LocalizationFileTailName = "_localization.plist";
-el.bubble.bool_ImplementAds = true;
-el.bubble.bool_AdsMaxNumberOfAttempsToLoad = 3;
+
+// Namescope for Ads Networks
+el.AdsNetworksScope = el.AdsNetworksScope || {};
+el.AdsNetworksScope.bool_ImplementAds = true;
+el.AdsNetworksScope.AdMobAdName = "BannerGeneral"; // Ads name for AdMob
 
 // Sounds settings
 el.bubble.fSoundFXVolume = 0.5;
@@ -38,5 +41,3 @@ el.bubble.LEVEL_TYPES = el.bubble.LEVEL_TYPES || {
 	CASUAL: 2
 };
 
-// AdMob ads
-el.bubble.AdMobAdName = "BannerGeneral";

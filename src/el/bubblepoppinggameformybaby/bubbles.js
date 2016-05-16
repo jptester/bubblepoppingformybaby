@@ -22,8 +22,9 @@ el.bubble.BubblesDestroyed = 0;
 el.bubble.BubblesSFXStep = 6;
 el.bubble.BubblesPoppedMultipleHit = 2;
 el.bubble.FirstBubblesBonusReached = 13;
-el.bubble.SecondBubblesBonusReached = 21;
-el.bubble.ShowAddBubblesPoppedCounter = 50;
+el.bubble.SecondBubblesBonusReached = 31;
+el.bubble.LoadInterestitial = 20;
+el.bubble.ShowAddBubblesPoppedCounter = 60;
 el.bubble.BabyLaughs = [
 	res.snd_baby_laughs0_sfx,
 	res.snd_baby_laughs1_sfx,
@@ -32,7 +33,8 @@ el.bubble.BabyLaughs = [
 ];
 el.bubble.CurrentBabyLaugh = Math.round(el.bubble.BabyLaughs.length * Math.random()) % el.bubble.BabyLaughs.length;
 el.bubble.m_animalName = "animalInside";
-el.bubble.IncreasingTemp = cc.game.config.debugMode == 1 ? 0.2 : 0.05;
+//el.bubble.IncreasingTemp = cc.game.config.debugMode == 1 ? 0.2 : 0.05;
+el.bubble.IncreasingTemp = 0.05;
 el.bubble.DecreasingTemp = 0.04;
 
 //
@@ -342,15 +344,20 @@ el.bubble.BubbleGenerator = el.Class.extend({
 						}
 						
 						// If android and inMobi plug in
-						if ( cc.sys.OS_ANDROID == cc.sys.os && 
-							 el.bubble.bool_ImplementAds && 
-							 (counter + iBubblesPopped + 15) % el.bubble.ShowAddBubblesPoppedCounter == 0 ) {
+						if ( cc.sys.OS_ANDROID == cc.sys.os && el.AdsNetworksScope.bool_ImplementAds ) {
+							 
+							if ( (counter + iBubblesPopped) % el.bubble.LoadInterestitial == 0 ) {
+								el.Game.getInstance().loadInterestitials();
+							}
+							 
+							if ( (counter + iBubblesPopped) % el.bubble.ShowAddBubblesPoppedCounter == 0 ) {
 							
-							// Stop mouse/touch move track
-							el.bubble.MousePosition = null;
-								 
-							// Limit has been reached - load interestial
-							el.Game.getInstance().playAds();
+								// Stop mouse/touch move track
+								el.bubble.MousePosition = null;
+									 
+								// Limit has been reached - load interestial
+								el.Game.getInstance().playAds();
+							}
 						}
 						
 						// Increase temp

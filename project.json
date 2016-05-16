@@ -18,6 +18,7 @@
 		"src/el/bubblepoppinggameformybaby/credits.js",
         
 		"src/el/engine/class.js",
+		"src/el/engine/ads-plugins.js",
 		"src/el/engine/game.js",
 		"src/el/engine/game-levels-manager.js",
 		"src/el/engine/level-content.js",

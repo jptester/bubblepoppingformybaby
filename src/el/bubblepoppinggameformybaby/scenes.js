@@ -78,6 +78,20 @@ el.InitLayer = cc.Layer.extend({
 });
 
 //
+// Start ads plug ins
+//
+el.bubble.StartAdsPlugsIns = function () {
+
+	// if currently at mobile
+	if ( el.AdsNetworksScope.bool_ImplementAds && cc.sys.OS_ANDROID == cc.sys.os ) {
+		
+		// Init needed external plugins (game-config)
+		el.Game.getInstance().initPlugIns();
+	}
+
+};
+
+//
 // Splash screen - First screen for game
 // Creator : JP
 // Date: 20/01/2016
@@ -87,6 +101,9 @@ el.SplashScreen = el.LevelScene.extend({
         this._super();
         var layer = new el.InitLayer(res.sc_splashscreen, true, false, this.nextScene);
         this.addChild(layer);
+		
+		// Start ads plug-ins
+		el.bubble.StartAdsPlugsIns();
     },
 	nextScene:function(sNextScene) {
 		cc.director.runScene(new cc.TransitionFade(1, new el.MainLevel()));
@@ -145,11 +162,10 @@ el.MainLevel = cc.Scene.extend({
 			}
 		}
 		
-		// if currently at mobile
-		if ( el.bubble.bool_ImplementAds && cc.sys.OS_ANDROID == cc.sys.os ) {
-			
-			// Init needed external plugins (game-config)
-			el.Game.getInstance().initPlugIns();
+		// if debug load plugins
+		if ( cc.game.config.debugMode == 1 ) {
+			// Start ads plug-ins
+			el.bubble.StartAdsPlugsIns();
 		}
 	},
 		
@@ -578,7 +594,7 @@ el.optionsPopUpScene = cc.Scene.extend({
 			// If native app
 			if (cc.sys.isNative)
 			{
-				if ( el.bubble.bool_ImplementAds && cc.sys.OS_ANDROID == cc.sys.os && el.Game.getInstance().isAnyInterestitialReady() ) {
+				if ( el.AdsNetworksScope.bool_ImplementAds && cc.sys.OS_ANDROID == cc.sys.os && el.Game.getInstance().isAnyInterestitialReady() ) {
 					
 					// Change adDismissed function so once dismissed the ad the game will quit
 					el.Game.adDismissed = function() {
